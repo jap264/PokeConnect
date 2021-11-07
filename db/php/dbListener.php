@@ -2,6 +2,7 @@
 require_once('../rabbitmqphp_example/path.inc');
 require_once('../rabbitmqphp_example/get_host_info.inc');
 require_once('../rabbitmqphp_example/rabbitMQLib.inc');
+require_once('dbFunctions.php');
 
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
@@ -15,8 +16,22 @@ function requestProcessor($request){
 	if(!isset($request['type'])){
 		return array('message'=>"ERROR: Message type is not supported");
 	}
-	echo "error";
-	$response_msg = logAndSendErrors();
+	switch($request['type']){
+		case "login":
+			echo "Requesting to Login".PHP_EOL;
+			$response_msg = login($request['username'],$request['password']);
+			break;
+		case "register":
+			echo "Requesting to register".PHP_EOL;
+			$response_msg = register($request['username'],$request['password'], $request['email']);
+			break;
+		default:
+			echo "error".PHP_EOL;
+			$response_msg = logAndSendErrors();	
+			break;
+	}
+	echo $response_msg;
+	return $response_msg;
 }
 $server = new rabbitMQServer('../rabbitmqphp_example/rabbitMQ_db.ini', 'testServer');
 $server->process_requests('requestProcessor');
