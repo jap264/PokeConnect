@@ -52,3 +52,37 @@ Event Logging Start -----
 2021-11-10 10:33:12pm [ DB ] ERROR: No Pokemon with this species name: slowpoke
 2021-11-10  10:59:44pm [ FE ] SUCCESS: login successful using Username = test and Password = test
 2021-11-10  11:06:41pm [ FE ] SUCCESS: login successful using Username = test and Password = test
+2021-11-10  11:27:43pm [ FE ] SUCCESS: login successful using Username = test and Password = test
+2021-11-10  11:30:47pm [ FE ] SUCCESS: login successful using Username = test and Password = test
+2021-11-10 11:30:53pm [ DB ] ERROR: No Pokemon with this species name: 
+2021-11-11  12:20:58pm [ FE ] ERROR: failed to login using Username = test and Password = test
+2021-11-11  12:24:04pm [ FE ] ERROR: failed to login using Username = test and Password = test
+2021-11-11  12:29:56pm [ FE ] SUCCESS: login successful using Username = test and Password = test
+2021-11-11  12:38:38pm [ FE ] SUCCESS: pokemon found grookey
+2021-11-11  12:38:49pm [ FE ] SUCCESS: pokemon found grookey
+2021-11-11  12:39:15pm [ FE ] SUCCESS: pokemon found snom
+2021-11-11  12:39:25pm [ FE ] SUCCESS: pokemon found snom
+2021-11-11  12:39:37pm [ FE ] SUCCESS: pokemon found snom
+2021-11-11  12:57:50pm [ FE ] SUCCESS: login successful using Username = test and Password = test
+2021-11-11  12:59:31pm [ FE ] SUCCESS: login successful using Username = test and Password = test
+2021-11-11  01:00:30pm [ FE ] SUCCESS: pokemon found grookey
+2021-11-11  01:00:57pm [ FE ] SUCCESS: pokemon found grookey
+2021-11-11  01:01:21pm [ FE ] SUCCESS: pokemon found snom
+2021-11-11  01:01:31pm [ FE ] SUCCESS: pokemon found snom
+2021-11-11  01:01:43pm [ FE ] SUCCESS: pokemon found grookey
+2021-11-11 01:01:47pm [ DB ] ERROR: No Pokemon with this species name: 
+2021-11-11  01:01:58pm [ FE ] ERROR: failed to return pokemon data
+2021-11-11  01:02:49pm [ FE ] SUCCESS: login successful using Username = test and Password = test
+2021-11-11 01:03:21pm [ DB ] ERROR: No Pokemon with this species name: slowpoke
+2021-11-11  01:03:31pm [ FE ] ERROR: failed to return pokemon data
+2021-11-11  01:03:58pm [ FE ] SUCCESS: pokemon found inteleon
+2021-11-11 01:04:04pm [ DB ] ERROR: No Pokemon with this species name: 
+2021-11-11  01:04:16pm [ FE ] ERROR: failed to return pokemon data
+2021-11-11  01:04:55pm [ FE ] SUCCESS: pokemon found snom
+2021-11-11  01:05:06pm [ FE ] SUCCESS: pokemon found snom
+2021-11-11  01:05:17pm [ FE ] SUCCESS: pokemon found snom
+2021-11-11  01:05:38pm [ FE ] SUCCESS: pokemon found snom
+2021-11-11  01:05:50pm [ FE ] SUCCESS: pokemon found snom
+2021-11-11 01:12:56pm [ DB ] ERROR: No Pokemon with this species name: 
+2021-11-11  01:13:07pm [ FE ] ERROR: failed to return pokemon data
+2021-11-11  01:39:05pm [ FE ] SUCCESS: login successful using Username = test and Password = test
