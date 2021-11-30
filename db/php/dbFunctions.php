@@ -31,12 +31,12 @@ function login($username, $password){
 				$h_password = generateHash($password,$salt);
 				if ($row['h_password'] == $h_password){
 					echo "User Authenicated".PHP_EOL;
-					return true;
+					return 1;
 				}
 				else{
 					$event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: Username & Password do not match" . "\n";
 			                log_event($event);
-					return false;
+					return 0;
 				}
 			}
 		}
@@ -53,7 +53,7 @@ function  register($username, $password, $email){
 		echo "Username is taken.".PHP_EOL;
 		$event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ]  " . "ERROR: trying to register a taken username: $username" . "\n";
 		log_event($event);
-		return false;
+		return 0;
 	}
 
 	$salt = generateSalt(29);
@@ -64,7 +64,7 @@ function  register($username, $password, $email){
 
 	$result = $connection->query($new_query);
 
-	return true;	
+	return 1;	
 }
 function search($input){
 	$connection = dbConnection();
@@ -75,7 +75,7 @@ function search($input){
 			echo("No Pokemon with this species name.");
 			$event = date("Y-m-d") . " " . date("h:i:sa") . " [ DB ] " . "ERROR: No Pokemon with this species name: $input" . "\n";
 			log_event($event);
-			return false;
+			return 0;
 		}
 		else{
 			while($row = $result->fetch_assoc()){
@@ -86,7 +86,7 @@ function search($input){
 				else{
 					$event = date("Y-m-d") . " " . date("h:i:sa") . " [DB] " . "ERROR: This shouldn't ever throw but if it does holy shit." . "\n";
 					log_event($event);
-					return false;
+					return 0;
 				}
 			}
 		}
