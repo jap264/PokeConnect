@@ -10,6 +10,9 @@ $db = 'it490';
 $table_name_users = 'users';
 $table_name_pokemon = 'Pokemons';
 $table_name_stats = 'Stats';
+$table_name_moves = 'Moves';
+$table_name_thread = 'thread';
+$table_name_threadchat = 'threadchat';
 
 echo "Database & Table Generation Start".PHP_EOL;
 
@@ -66,10 +69,45 @@ if ($connection->query($query3) === TRUE) {
     echo "Table ".$table_name_stats." created successfully";
 } else {
     echo "Error creating table: " . $connection->error;
-	$event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: pokemon table creation failure:" . $connection->connect_errno.PHP_EOL . "\n";
+	$event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: stats table creation failure:" . $connection->connect_errno.PHP_EOL . "\n";
         //log_event($event);
 }
 echo PHP_EOL;
+
+$query4 = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_moves." (move_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, type VARCHAR(10) NOT NULL)";
+
+if ($connection->query($query4) === TRUE) {
+    echo "Table ".$table_name_moves." created successfully";
+} else {
+    echo "Error creating table: " . $connection->error;
+        $event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: moves table creation failure:" . $connection->connect_errno.PHP_EOL . "\n";
+        //log_event($event);
+}
+echo PHP_EOL;
+
+$query5 = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_thread." (thread_ID INT AUTO_INCREMENT PRIMARY KEY, title varchar(255) NOT NULL, dat datetime NOT NULL, owner_ID INT NOT NULL, purge_status varchar(20), tags varchar(255) NOT NULL, FOREIGN KEY (owner_ID) REFERENCES users(id))";
+
+if ($connection->query($query5) === TRUE) {
+    echo "Table ".$table_name_thread." created successfully";
+} else {
+    echo "Error creating table: " . $connection->error;
+        $event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: thread table creation failure:" . $connection->connect_errno.PHP_EOL . "\n";
+        //log_event($event);
+}
+echo PHP_EOL;
+
+$query6 = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_thread." (threadchat_ID INT AUTO_INCREMENT PRIMARY KEY, thread_ID INT NOT NULL, mtext varchar(1000) NOT NULL, DAT datetime NOT NULL, owner_ID INT NOT NULL, purge_status varchar(20), FOREIGN KEY (thread_ID) REFERENCES thread(thread_ID), FOREIGN KEY (owner_ID) REFERENCES users(id))";
+
+if ($connection->query($query6) === TRUE) {
+    echo "Table ".$table_name_thread." created successfully";
+} else {
+    echo "Error creating table: " . $connection->error;
+        $event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: threadchat table creation failure:" . $connection->connect_errno.PHP_EOL . "\n";
+        //log_event($event);
+}
+echo PHP_EOL;
+
+
 
 $connection->close();
 
