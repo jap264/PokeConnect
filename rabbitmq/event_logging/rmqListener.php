@@ -3,6 +3,7 @@ require_once('../rabbitmqphp_example/path.inc');
 require_once('../rabbitmqphp_example/get_host_info.inc');
 require_once('../rabbitmqphp_example/rabbitMQLib.inc');
 require_once('event_logger.php');
+require_once('../../db/php/dbFunctions.php');
 
 function received_event($event_string)
 {
@@ -28,6 +29,16 @@ function requestProcessor($request)
 	    echo "An error has occurred.".PHP_EOL;
 	    log_event($request['error_message']);
 	    break;
+    case "login":
+	    echo "Requesting to login.".PHP_EOL;
+	    $response_msg = login($request['username'], $request['password']);
+	    return $response_msg;
+	    break;
+    case "register":
+	    echo "Requesting to register.".PHP_EOL;
+	    $response_msg = register($request['username'], $request['password'], $request['email']);
+	    return $response_msg;
+	    break;	    
   }
   
   return array("returnCode" => '0', 'message'=>"Server received request and processed");
