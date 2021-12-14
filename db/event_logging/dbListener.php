@@ -44,7 +44,7 @@ function requestProcessor($request){
 
 	echo $response_msg;
 	return $response_msg;
-	if(isset($resonse_msg){
+	if(isset($response_msg){
 	echo $response_msg;
 	return $response_msg;}
 }

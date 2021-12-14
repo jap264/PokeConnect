@@ -29,9 +29,17 @@ function requestProcessor($request)
 	    echo "An error has occurred.".PHP_EOL;
 	    received_event($request['error_message']);
 	    break;
-
-    case "Pokemon":
-		$response_msg = callPy($request['Pokemon']);
+    case "Install":
+		$response_msg = callPy($request['type'], $request['name'], $request['version'], $request['system']);
+		break;
+    case "Fail":
+		$response_msg = callPy($request['type'], $request['name'], $request['version'], $request['system']);
+		break;
+    case "Rollback":
+		$response_msg = callPy($request['type'], $request['name'], $request['version'], $request['system']);
+		break;
+    case "Create":
+		$response_msg = callPy($request['type'], $request['name'], $request['version'], $request['system']);
 		break;
   }
 
@@ -39,9 +47,9 @@ function requestProcessor($request)
 	return $response_msg;
 }
 
-function callPy($py){
-	$command = escapeshellcmd('python ../poke_api_etl/app.py ');
-	$output = shell_exec($command.$py);
+function callPy($py, $py1, $py2, $py3){
+	$command = escapeshellcmd('python ../app/app.py ');
+	$output = shell_exec( $command.$py." ".$py1." ".$py2." ".$py3 );
 	echo $output;
 	return $output;
 }

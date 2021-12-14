@@ -11,6 +11,7 @@ $table_name_users = 'users';
 $table_name_pokemon = 'Pokemons';
 $table_name_stats = 'Stats';
 $table_name_moves = 'Moves';
+$table_name_teams = 'Teams';
 $table_name_thread = 'thread';
 $table_name_threadchat = 'threadchat';
 
@@ -74,7 +75,7 @@ if ($connection->query($query3) === TRUE) {
 }
 echo PHP_EOL;
 
-$query4 = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_moves." (move_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, type VARCHAR(10) NOT NULL)";
+$query4 = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_moves." (move_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, move_name VARCHAR(10) NOT NULL, type VARCHAR(10) NOT NULL)";
 
 if ($connection->query($query4) === TRUE) {
     echo "Table ".$table_name_moves." created successfully";
@@ -107,7 +108,18 @@ if ($connection->query($query6) === TRUE) {
 }
 echo PHP_EOL;
 
+$query7 = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_teams." (teams_ID INT AUTO_INCREMENT PRIMARY KEY, team_name VARCHAR(100) NOT NULL,slot1 VARCHAR(20) NOT NULL, slot2 VARCHAR(20), slot3 VARCHAR(20), slot4 VARCHAR(20), slot5 VARCHAR(20), slot6 VARCHAR(20))";
 
+if ($connection->query($query7) === TRUE) {
+    echo "Table ".$table_name_teams." created successfully";
+} else {
+    echo "Error creating table: " . $connection->error;
+        $event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: teams table creation failure:" . $connection->connect_errno.PHP_EOL . "\n";
+        //log_event($event);
+}
+echo PHP_EOL;
+
+echo "Database Generation End".PHP_EOL;
 
 $connection->close();
 

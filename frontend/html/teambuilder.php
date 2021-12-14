@@ -45,404 +45,471 @@ session_start();
   </div>
 </nav>
 
-<!-- THIS IS WHERE THE TEAM BUILDING BEINGS --> 
+<!-- THIS IS WHERE THE TEAM BUILDING BEGINS --> 
 <h1>PokeConnect Team Builder</h1>
 
 <div class="m_content-box">
-<form id="m_tb-form" target="_blank">
+<form role="form" method="post" action="../php/save_team.php" id="m_tb-form" target="_blank">
 
 <h3>Team Input</h3>
 <ul id="m_tb-team-input" class="m_tb-team-input">
 <li class="m_tb-pkmn-input">
-<div class="m_tb-pkmn-label"><span>Pokémon 1</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="search_Pokemon1"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-label"><span>Pokémon 1</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon1"> <div class="m_tb-pkmn-options">
 
-<select class="m_tb-pkmn-ability">
-<option value="" selected disabled>(No Ability)</option>
-</select>
-<select class="m_tb-pkmn-item">
-<option value="" selected disabled>(No Held Item)</option>
-</select>
-</div>
-<div class="m_tb-pkmn-custom-types">
-<div class="m_tb-custom-types-label">Custom Type</div>
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
+<div class="m_tb-pkmn-moves">
+<div class="m_tb-custom-types-label">Moves</div>
+<select class="m_tb-pkmn-move-1">
+<option value="" selected>Move 1</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
 <option value="steel">Steel</option>
-<option value="fairy">Fairy</option>
+<option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
+<select class="m_tb-pkmn-move-2">
+<option value="" selected>Move 2</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
 <option value="steel">Steel</option>
-<option value="fairy">Fairy</option>
+<option value="fairy">Sweet Kiss</option>
 </select>
-</div>
+<select class="m_tb-pkmn-move-3">
+<option value="" selected>Move 3</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+<select class="m_tb-pkmn-move-4">
+<option value="" selected>Move 4</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
 
-<li class="m_tb-pkmn-input">
-<div class="m_tb-pkmn-label"><span>Pokémon 2</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="search_Pokemon2"> <div class="m_tb-pkmn-options">
-
-<select class="m_tb-pkmn-ability">
-<option value="" selected disabled>(No Ability)</option>
-</select>
-<select class="m_tb-pkmn-item">
-<option value="" selected disabled>(No Held Item)</option>
-</select>
-</div>
-<div class="m_tb-pkmn-custom-types">
-<div class="m_tb-custom-types-label">Custom Type</div>
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
-<option value="steel">Steel</option>
-<option value="fairy">Fairy</option>
-</select>
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
-<option value="steel">Steel</option>
-<option value="fairy">Fairy</option>
-</select>
 </div>
 
 <li class="m_tb-pkmn-input">
-<div class="m_tb-pkmn-label"><span>Pokémon 3</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="search_Pokemon3"> <div class="m_tb-pkmn-options">
-<select class="m_tb-pkmn-ability">
-<option value="" selected disabled>(No Ability)</option>
-</select>
-<select class="m_tb-pkmn-item">
-<option value="" selected disabled>(No Held Item)</option>
-</select>
-</div>
-<div class="m_tb-pkmn-custom-types">
-<div class="m_tb-custom-types-label">Custom Type</div>
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
+<div class="m_tb-pkmn-label"><span>Pokémon 2</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon2"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-moves">
+<div class="m_tb-custom-types-label">Moves</div>
+<select class="m_tb-pkmn-move-1">
+<option value="" selected>Move 1</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
 <option value="steel">Steel</option>
-<option value="fairy">Fairy</option>
+<option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
+<select class="m_tb-pkmn-move-2">
+<option value="" selected>Move 2</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
 <option value="steel">Steel</option>
-<option value="fairy">Fairy</option>
+<option value="fairy">Sweet Kiss</option>
 </select>
-</div>
+<select class="m_tb-pkmn-move-3">
+<option value="" selected>Move 3</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+<select class="m_tb-pkmn-move-4">
+<option value="" selected>Move 4</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
 
-<li class="m_tb-pkmn-input">
-<div class="m_tb-pkmn-label"><span>Pokémon 4</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="search_Pokemon4"> <div class="m_tb-pkmn-options">
-
-<select class="m_tb-pkmn-ability">
-<option value="" selected disabled>(No Ability)</option>
-</select>
-<select class="m_tb-pkmn-item">
-<option value="" selected disabled>(No Held Item)</option>
-</select>
-</div>
-<div class="m_tb-pkmn-custom-types">
-<div class="m_tb-custom-types-label">Custom Type</div>
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
-<option value="steel">Steel</option>
- <option value="fairy">Fairy</option>
-</select>
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
-<option value="steel">Steel</option>
-<option value="fairy">Fairy</option>
-</select>
 </div>
 
 <li class="m_tb-pkmn-input">
-<div class="m_tb-pkmn-label"><span>Pokémon 5</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="search_Pokemon5"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-label"><span>Pokémon 3</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon3"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-moves">
+<div class="m_tb-custom-types-label">Moves</div>
+<select class="m_tb-pkmn-move-1">
+<option value="" selected>Move 1</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+<select class="m_tb-pkmn-move-2">
+<option value="" selected>Move 2</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+<select class="m_tb-pkmn-move-3">
+<option value="" selected>Move 3</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+<select class="m_tb-pkmn-move-4">
+<option value="" selected>Move 4</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
 
-<select class="m_tb-pkmn-ability">
-<option value="" selected disabled>(No Ability)</option>
-</select>
-<select class="m_tb-pkmn-item">
-<option value="" selected disabled>(No Held Item)</option>
-</select>
 </div>
-<div class="m_tb-pkmn-custom-types">
-<div class="m_tb-custom-types-label">Custom Type</div>
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
-<option value="steel">Steel</option>
-<option value="fairy">Fairy</option>
-</select>
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
-<option value="steel">Steel</option>
-<option value="fairy">Fairy</option>
-</select>
- </div>
 
 <li class="m_tb-pkmn-input">
-<div class="m_tb-pkmn-label"><span>Pokémon 6</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="search_Pokemon6"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-label"><span>Pokémon 4</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon4"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-moves">
+<div class="m_tb-custom-types-label">Moves</div>
+<select class="m_tb-pkmn-move-1">
+<option value="" selected>Move 1</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+<select class="m_tb-pkmn-move-2">
+<option value="" selected>Move 2</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+<select class="m_tb-pkmn-move-3">
+<option value="" selected>Move 3</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+<select class="m_tb-pkmn-move-4">
+<option value="" selected>Move 4</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
 
-<select class="m_tb-pkmn-ability">
-<option value="" selected disabled>(No Ability)</option>
-</select>
-<select class="m_tb-pkmn-item">
-<option value="" selected disabled>(No Held Item)</option>
-</select>
 </div>
-<div class="m_tb-pkmn-custom-types">
-<div class="m_tb-custom-types-label">Custom Type</div>
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
+
+<li class="m_tb-pkmn-input">
+<div class="m_tb-pkmn-label"><span>Pokémon 6</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon6"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-moves">
+<div class="m_tb-custom-types-label">Moves</div>
+<select class="m_tb-pkmn-move-1">
+<option value="" selected>Move 1</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
 <option value="steel">Steel</option>
-<option value="fairy">Fairy</option>
+<option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
+<select class="m_tb-pkmn-move-2">
+<option value="" selected>Move 2</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
 <option value="steel">Steel</option>
-<option value="fairy">Fairy</option>
+<option value="fairy">Sweet Kiss</option>
 </select>
+<select class="m_tb-pkmn-move-3">
+<option value="" selected>Move 3</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+<select class="m_tb-pkmn-move-4">
+<option value="" selected>Move 4</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+
 </div>
 
 </li></li></li></li></li></li></ul>
-
-
-
-
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
-<option value="steel">Steel</option>
-<option value="fairy">Fairy</option>
-</select>
-<select class="m_tb-pkmn-custom-type">
-<option value="" selected>---</option>
-<option value="normal">Normal</option>
-<option value="fire">Fire</option>
-<option value="water">Water</option>
-<option value="electric">Electric</option>
-<option value="grass">Grass</option>
-<option value="ice">Ice</option>
-<option value="fighting">Fighting</option>
-<option value="poison">Poison</option>
-<option value="ground">Ground</option>
-<option value="flying">Flying</option>
-<option value="psychic">Psychic</option>
-<option value="bug">Bug</option>
-<option value="rock">Rock</option>
-<option value="ghost">Ghost</option>
-<option value="dragon">Dragon</option>
-<option value="dark">Dark</option>
-<option value="steel">Steel</option>
-<option value="fairy">Fairy</option>
-</select>
-</form></div>
-
-
-</div>
-
-
-
-
 
 <div class="m_content-box m_team-builder-container">
 <div class="m_team-builder-container-header">Defensive Coverage</div>
