@@ -27,8 +27,7 @@ function login($username, $password){
 		}
 		else {
 			while($row = $result->fetch_assoc()){
-				$salt = $row['salt'];
-				$h_password = generateHash($password,$salt);
+				$h_password = generateHash($password);
 				if ($row['h_password'] == $h_password){
 					echo "User Authenicated".PHP_EOL;
 					return 1;
@@ -58,9 +57,9 @@ function  register($username, $password, $email){
 
 	$salt = generateSalt(29);
 
-	$h_password = generateHash($password,$salt);
+	$h_password = generateHash($password);
 
-	$new_query = "INSERT INTO users (username,email,h_password,salt) VALUES ('$username','$email','$h_password','$salt')";
+	$new_query = "INSERT INTO users (username,email,h_password,salt) VALUES ('$username','$email','$h_password')";
 
 	$result = $connection->query($new_query);
 
@@ -111,8 +110,8 @@ function checkUsername($username){
 }
 
 //hashes password to store in the db
-function generateHash($password, $salt) {
-	$new = $password . $salt;
+function generateHash($password) {
+	$new = $password . 'abcdefghjiklmaopqrstuvwxyz1234567890';
 	$hash = hash('sha256',$new);
 	//echo "Hash: " . $hash.PHP_EOL;
 	return $hash;
@@ -150,20 +149,23 @@ function loadPokemonData($poke_json_string){
 		if (array_key_exists('error', $poke_data)) { 
 			continue; 
 		}
+		$type1 = null; 
+		$type2 = "";
 		//loop through array and add values for mysql table
 		$name = $poke_data['name'];
 		$image = $poke_data['image'];
 		//Get types to load into pokemon table
 		$types_in_poke_data = $poke_data['types'];
 		for($ty = 0; $ty < count($types_in_poke_data); $ty++){
+
 			if(isset($types_in_poke_data[$ty]) && !isset($type1)) {
 				$typeData = $types_in_poke_data[$ty]['type'];
-				$typeName = $typeData['name'];
-				$type1 = $typeName;
+				$typeName1 = $typeData['name'];
+				$type1 = $typeName1;
 			} elseif (isset($type1)) {
 				$typeData = $types_in_poke_data[$ty]['type'];
-				$typeName = $typeData['name'];
-				$type2 = $typeName;
+				$typeName2 = $typeData['name'];
+				$type2 = $typeName2;
 			} else {
 				echo "Error in load type data".PHP_EOL;
 			} 
