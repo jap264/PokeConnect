@@ -10,6 +10,10 @@ $db = 'it490';
 $table_name_users = 'users';
 $table_name_pokemon = 'Pokemons';
 $table_name_stats = 'Stats';
+$table_name_moves = 'Moves';
+$table_name_teams = 'Teams';
+$table_name_thread = 'thread';
+$table_name_threadchat = 'threadchat';
 
 echo "Database & Table Generation Start".PHP_EOL;
 
@@ -37,7 +41,7 @@ if ($connection->query($sql) === TRUE) {
 
 $connection-> select_db($sql);
 
-$query = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_users." (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,username VARCHAR(50) NOT NULL,email VARCHAR(50) NOT NULL,h_password VARCHAR(64) NOT NULL,salt VARCHAR(30) NOT NULL,created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)";
+$query = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_users." (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,username VARCHAR(50) NOT NULL,email VARCHAR(50) NOT NULL,h_password VARCHAR(64) NOT NULL,created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)";
     
 if ($connection->query($query) === TRUE) {
     echo "Table ".$table_name_users." created successfully";
@@ -66,10 +70,56 @@ if ($connection->query($query3) === TRUE) {
     echo "Table ".$table_name_stats." created successfully";
 } else {
     echo "Error creating table: " . $connection->error;
-	$event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: pokemon table creation failure:" . $connection->connect_errno.PHP_EOL . "\n";
+	$event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: stats table creation failure:" . $connection->connect_errno.PHP_EOL . "\n";
         //log_event($event);
 }
 echo PHP_EOL;
+
+$query4 = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_moves." (move_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, type VARCHAR(10) NOT NULL)";
+
+if ($connection->query($query4) === TRUE) {
+    echo "Table ".$table_name_moves." created successfully";
+} else {
+    echo "Error creating table: " . $connection->error;
+        $event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: moves table creation failure:" . $connection->connect_errno.PHP_EOL . "\n";
+        //log_event($event);
+}
+echo PHP_EOL;
+
+$query5 = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_thread." (thread_ID INT AUTO_INCREMENT PRIMARY KEY, title varchar(255) NOT NULL, dat datetime NOT NULL, owner_ID INT NOT NULL, purge_status varchar(20), tags varchar(255) NOT NULL, FOREIGN KEY (owner_ID) REFERENCES users(id))";
+
+if ($connection->query($query5) === TRUE) {
+    echo "Table ".$table_name_thread." created successfully";
+} else {
+    echo "Error creating table: " . $connection->error;
+        $event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: thread table creation failure:" . $connection->connect_errno.PHP_EOL . "\n";
+        //log_event($event);
+}
+echo PHP_EOL;
+
+$query6 = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_thread." (threadchat_ID INT AUTO_INCREMENT PRIMARY KEY, thread_ID INT NOT NULL, mtext varchar(1000) NOT NULL, DAT datetime NOT NULL, owner_ID INT NOT NULL, purge_status varchar(20), FOREIGN KEY (thread_ID) REFERENCES thread(thread_ID), FOREIGN KEY (owner_ID) REFERENCES users(id))";
+
+if ($connection->query($query6) === TRUE) {
+    echo "Table ".$table_name_thread." created successfully";
+} else {
+    echo "Error creating table: " . $connection->error;
+        $event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: threadchat table creation failure:" . $connection->connect_errno.PHP_EOL . "\n";
+        //log_event($event);
+}
+echo PHP_EOL;
+
+$query7 = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_teams." (teams_ID INT AUTO_INCREMENT PRIMARY KEY, team_name VARCHAR(100) NOT NULL,slot1 VARCHAR(20) NOT NULL, slot2 VARCHAR(20), slot3 VARCHAR(20), slot4 VARCHAR(20), slot5 VARCHAR(20), slot6 VARCHAR(20))";
+
+if ($connection->query($query7) === TRUE) {
+    echo "Table ".$table_name_teams." created successfully";
+} else {
+    echo "Error creating table: " . $connection->error;
+        $event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: teams table creation failure:" . $connection->connect_errno.PHP_EOL . "\n";
+        //log_event($event);
+}
+echo PHP_EOL;
+
+echo "Database Generation End".PHP_EOL;
 
 $connection->close();
 
