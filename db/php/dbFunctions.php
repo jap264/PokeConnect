@@ -149,20 +149,23 @@ function loadPokemonData($poke_json_string){
 		if (array_key_exists('error', $poke_data)) { 
 			continue; 
 		}
+		$type1 = null; 
+		$type2 = "";
 		//loop through array and add values for mysql table
 		$name = $poke_data['name'];
 		$image = $poke_data['image'];
 		//Get types to load into pokemon table
 		$types_in_poke_data = $poke_data['types'];
 		for($ty = 0; $ty < count($types_in_poke_data); $ty++){
+
 			if(isset($types_in_poke_data[$ty]) && !isset($type1)) {
 				$typeData = $types_in_poke_data[$ty]['type'];
-				$typeName = $typeData['name'];
-				$type1 = $typeName;
+				$typeName1 = $typeData['name'];
+				$type1 = $typeName1;
 			} elseif (isset($type1)) {
 				$typeData = $types_in_poke_data[$ty]['type'];
-				$typeName = $typeData['name'];
-				$type2 = $typeName;
+				$typeName2 = $typeData['name'];
+				$type2 = $typeName2;
 			} else {
 				echo "Error in load type data".PHP_EOL;
 			} 
