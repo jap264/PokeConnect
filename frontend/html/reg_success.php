@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 	<html lang="en">
 		<head>
@@ -6,33 +9,18 @@
 
 <script>
 
-function HandleRegisterResponse(response)
-{
-
-        var resp = JSON.parse(response);
-        var returnCode = parseInt(resp.returnCode);
-        if (returnCode == 0){
-                document.getElementById("regResponse").innerHTML = "Registration successful!";
-        }
-        else{
-                document.getElementById("regResponse").innerHTML = "Registration failed, try again...";
-        }
-        //document.getElementById("loginResponse").innerHTML = "Login Failed. Try again.";
-}
-
-
 function HandleLoginResponse(response)
 {
 
 	var resp = JSON.parse(response);
-	var returnCode = parseInt(resp.returnCode);
+	/*var returnCode = parseInt(resp.returnCode);
 	if (returnCode == 0){
-		document.getElementById("loginResponse").innerHTML = "Login successful!";
+		document.getElementById("textResponse").innerHTML = "response: "+resp.message+"<p>";
 	}
 	else{
-		document.getElementById("loginResponse").innerHTML = "Login failed, try again...";	
-	}
-	//document.getElementById("loginResponse").innerHTML = "Login Failed. Try again.";
+		document.getElementById("textResponse").innerHTML = resp.returnCode;	
+	}*/
+	document.getElementById("textResponse").innerHTML = "response: "+resp+"<p>";
 }
 
 function SendLoginRequest(username,password)
@@ -40,7 +28,7 @@ function SendLoginRequest(username,password)
 	//document.getElementById("textResponse").innerHTML = "response: "+this.responseText  +"<p>";	
 	var request = new XMLHttpRequest();
 
-	request.open("POST","../php/login.php", true);
+	request.open("POST","../php/loginReg.php", true);
 	request.setRequestHeader("Content-Type","application/x-www-form-urlencoded"); 
 	//request.open("GET", "../php/loginReg.php?type=login&username=" + username + "&password=" + password, true);
 
@@ -62,7 +50,7 @@ function SendRegisterRequest(username, email, password, password2)
         //document.getElementById("textResponse").innerHTML = "response: "+this.responseText  +"<p>";
         var request = new XMLHttpRequest();
 
-        request.open("POST","../php/register.php",true);
+        request.open("POST","../php/loginReg.php",true);
         request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 
         request.onreadystatechange= function ()
@@ -70,7 +58,7 @@ function SendRegisterRequest(username, email, password, password2)
 
                 if ((this.readyState == 4)&&(this.status == 200))
                 {
-                        HandleRegisterResponse(this.responseText);
+                        HandleLoginResponse(this.responseText);
                 }
         }
         request.send("type=register&username="+username+"&email="+email+"&password="+password+"&password2="+password2);
@@ -142,10 +130,6 @@ function SendRegisterRequest(username, email, password, password2)
  							<div>
  									  <button type="submit" class="btn btn-md" OnClick='SendRegisterRequest(document.getElementById("registerUsername").value, document.getElementById("email").value, document.getElementById("registerPassword").value, document.getElementById("registerPassword2").value)' id = "registerButtonId">Register</button>
  							</div>
-
-							<div id="regResponse">
-								Awaiting Response...
-							</div>
 						</fieldset>
 					</form>
 				</div>
@@ -157,7 +141,7 @@ function SendRegisterRequest(username, email, password, password2)
 				<div class="col-md-5">
  				 		<form role="form" method="post" action="../php/login.php" >
 						<fieldset>							
-							<p class="text-uppercase"> Login using your account: </p>	
+							<p class="text-uppercase"> user registered. please login: </p>	
  								
 							<div class="form-group">
 								<input type="username" name="username" id="loginUsername" class="form-control input-lg" placeholder="username">
@@ -168,9 +152,9 @@ function SendRegisterRequest(username, email, password, password2)
 							<div>
 								<button type="submit" class="btn btn-md" OnClick='SendLoginRequest(document.getElementById("loginUsername").value, document.getElementById("loginPassword").value)' id = "loginButtonId">Login</button>
 							</div>
-								 <div id="loginResponse">
-									Awaiting Response...
-								 </div>
+								 <div id="textResponse">
+	awaiting response
+</div>
  						</fieldset>
 				</form>	
 				</div>

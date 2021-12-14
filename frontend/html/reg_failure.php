@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 	<html lang="en">
 		<head>
@@ -104,7 +107,7 @@ function SendRegisterRequest(username, email, password, password2)
 					
 					<form role="form" method="post" >
 							
-							<p class="text-uppercase pull-center"> LOGIN FAILED. TRY AGAIN.</p>	
+							<p class="text-uppercase pull-center"> REGISTRATION FAILED. TRY AGAIN.</p>	
  							<div class="form-group">
 								<input type="text" name="username" id="registerUsername" class="form-control input-lg" placeholder="username">
 							</div>
