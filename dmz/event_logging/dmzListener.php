@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 require_once('../rabbitmqphp_example/path.inc');
 require_once('../rabbitmqphp_example/get_host_info.inc');
@@ -39,7 +40,7 @@ function requestProcessor($request)
 }
 
 function callPy($py){
-	command = escapeshellcmd('python ../poke_api_etl/app.py ');
+	$command = escapeshellcmd('python ../poke_api_etl/app.py ');
 	$output = shell_exec($command.$py);
 	echo $output;
 	return $output;
