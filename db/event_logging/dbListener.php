@@ -41,14 +41,12 @@ function requestProcessor($request){
 			echo "default case";	
 			break;
 	}
-<<<<<<< HEAD
+
 	echo $response_msg;
 	return $response_msg;
-=======
 	if(isset($resonse_msg){
 	echo $response_msg;
 	return $response_msg;}
->>>>>>> 9fd054d6e24640a7a32aff89cc147cf6cb1d5d37
 }
 echo "Start Database Server".PHP_EOL;
 $server = new rabbitMQServer('../rabbitmqphp_example/rabbitMQ_db.ini', 'testServer');
