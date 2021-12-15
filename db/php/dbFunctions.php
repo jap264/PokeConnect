@@ -59,7 +59,7 @@ function  register($username, $password, $email){
 
 	$h_password = generateHash($password);
 
-	$new_query = "INSERT INTO users (username,email,h_password,salt) VALUES ('$username','$email','$h_password')";
+	$new_query = "INSERT INTO users (username,email,h_password) VALUES ('$username','$email','$h_password')";
 
 	$result = $connection->query($new_query);
 
@@ -91,6 +91,72 @@ function search($input){
 		}
 	}
 }
+
+//save team to database and return team weaknesses
+function saveteam($teamname, $poke1, $poke2, $poke3, $poke4, $poke5, $poke6){
+
+	$connection = dbConnection();
+
+	if(checkPokemon($poke1)==0 || checkPokemon($poke2)==0 || checkPokemon($poke3)==0 || checkPokemon($poke4)==0 || checkPokemon($poke5)==0|| checkPokemon($poke6)==0){
+		echo("One of the pokemon in this team was not found.").PHP_EOL;
+                $event = date("Y-m-d") . "  " . date("h:i:sa") . " [ DB ] " . "ERROR: One of the pokemon in this team was not found." . "\n";
+                log_event($event);
+                return false;
+	}
+	else{
+		$new_query = "INSERT INTO Teams	(team_name,slot1,slot2,slot3,slot4,slot5,slot6) VALUES ('$teamname','$poke1','$poke2','$poke3','$poke4','$poke5','$poke6')";
+	        $result = $connection->query($new_query);
+	}
+
+	
+}
+
+//returns pokemon type
+function checkPokemonType($name){
+        $connection = dbConnection();
+        $query = "SELECT * FROM Pokemons WHERE poke_name  = '$name'";
+        $result = $connection->query($query);
+        if($result){
+                if($result->num_rows == 0){
+                        echo("No Pokemon with this species name.");
+                        $event = date("Y-m-d") . " " . date("h:i:sa") . " [ DB ] " . "ERROR: No Pokemon with this species name: $input" . "\n";
+                        log_event($event);
+                        return 0;
+                }
+                else{
+                        while($row = $result->fetch_assoc()){
+                                if($row['poke_name'] == $name){
+                                        echo "Pokemon Found.".PHP_EOL;
+                                        return $row['type1'];
+                                }
+                                else{
+                                        $event = date("Y-m-d") . " " . date("h:i:sa") . " [DB] " . "ERROR: This shouldn't ever throw but if it does holy shit." . "\n";
+                                        log_event($event);
+                                        return 0;
+                                }
+			}
+		}
+        }
+}
+
+//checks if pokemon exists
+function checkPokemon($name){
+	$connection = dbConnection();
+        $query = "SELECT * FROM Pokemons WHERE poke_name  = '$name'";
+        $result = $connection->query($query);
+        if($result){
+                if($result->num_rows == 0){
+                        echo("No Pokemon with this species name.");
+                        $event = date("Y-m-d") . " " . date("h:i:sa") . " [ DB ] " . "ERROR: No Pokemon with this species name: $input" . "\n";
+                        log_event($event);
+                        return 0;
+		}
+		else{
+		       	return 1;
+		}
+	}
+}
+
 //checks if username is not taken
 function checkUsername($username){
 	

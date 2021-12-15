@@ -14,12 +14,12 @@ $client = new rabbitMQClient("../rabbitmqphp_example/rabbitMQ_rmq.ini","testServ
 $request = array();
 $request['type'] = "saveteam";
 $request['teamname'] = $_POST["teamname"];
-$request['slot1'] = $_POST["slot1"];
-$request['slot2'] = $_POST["slot2"];
-$request['slot3'] = $_POST["slot3"];
-$request['slot4'] = $_POST["slot4"];
-$request['slot5'] = $_POST["slot5"];
-$request['slot6'] = $_POST["slot6"];
+$request['slot1'] = $_POST["Pokemon1"];
+$request['slot2'] = $_POST["Pokemon2"];
+$request['slot3'] = $_POST["Pokemon3"];
+$request['slot4'] = $_POST["Pokemon4"];
+$request['slot5'] = $_POST["Pokemon5"];
+$request['slot6'] = $_POST["Pokemon6"];
 
 $response = $client->send_request($request);
 

@@ -4,7 +4,7 @@ session_start();
 
 <html lang="en">
 <head>
-  <title>PokecConnect</title>
+  <title>PokeConnect</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -58,7 +58,7 @@ session_start();
 
 <div class="m_tb-pkmn-moves">
 <div class="m_tb-custom-types-label">Moves</div>
-<select class="m_tb-pkmn-move-1">
+<select class="m_tb-pkmn-move-1" name="poke1_move1">
 <option value="" selected>Move 1</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -79,7 +79,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-2">
+<select class="m_tb-pkmn-move-2" name="poke1_move2">
 <option value="" selected>Move 2</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -100,7 +100,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-3">
+<select class="m_tb-pkmn-move-3" name="poke1_move3">
 <option value="" selected>Move 3</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -121,7 +121,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-4">
+<select class="m_tb-pkmn-move-4" name="poke1_move4">
 <option value="" selected>Move 4</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -149,7 +149,7 @@ session_start();
 <div class="m_tb-pkmn-label"><span>Pokémon 2</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon2"> <div class="m_tb-pkmn-options">
 <div class="m_tb-pkmn-moves">
 <div class="m_tb-custom-types-label">Moves</div>
-<select class="m_tb-pkmn-move-1">
+<select class="m_tb-pkmn-move-1" name="poke2_move1">
 <option value="" selected>Move 1</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -170,7 +170,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-2">
+<select class="m_tb-pkmn-move-2" name="poke2_move2">
 <option value="" selected>Move 2</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -191,7 +191,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-3">
+<select class="m_tb-pkmn-move-3" name="poke2_move3">
 <option value="" selected>Move 3</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -212,7 +212,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-4">
+<select class="m_tb-pkmn-move-4" name="poke2_move4">
 <option value="" selected>Move 4</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -240,7 +240,7 @@ session_start();
 <div class="m_tb-pkmn-label"><span>Pokémon 3</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon3"> <div class="m_tb-pkmn-options">
 <div class="m_tb-pkmn-moves">
 <div class="m_tb-custom-types-label">Moves</div>
-<select class="m_tb-pkmn-move-1">
+<select class="m_tb-pkmn-move-1" name="poke3_move1">
 <option value="" selected>Move 1</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -261,7 +261,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-2">
+<select class="m_tb-pkmn-move-2" name="poke3_move2">
 <option value="" selected>Move 2</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -282,7 +282,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-3">
+<select class="m_tb-pkmn-move-3" name="poke3_move3">
 <option value="" selected>Move 3</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -303,7 +303,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-4">
+<select class="m_tb-pkmn-move-4" name="poke3_move4">
 <option value="" selected>Move 4</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -331,7 +331,7 @@ session_start();
 <div class="m_tb-pkmn-label"><span>Pokémon 4</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon4"> <div class="m_tb-pkmn-options">
 <div class="m_tb-pkmn-moves">
 <div class="m_tb-custom-types-label">Moves</div>
-<select class="m_tb-pkmn-move-1">
+<select class="m_tb-pkmn-move-1" name="poke4_move1">
 <option value="" selected>Move 1</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -352,7 +352,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-2">
+<select class="m_tb-pkmn-move-2" name="poke4_move2">
 <option value="" selected>Move 2</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -373,7 +373,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-3">
+<select class="m_tb-pkmn-move-3" name="poke4_move3">
 <option value="" selected>Move 3</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -394,7 +394,97 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-4">
+<select class="m_tb-pkmn-move-4" name="poke4_move4">
+<option value="" selected>Move 4</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+</div>
+
+<li class="m_tb-pkmn-input">
+<div class="m_tb-pkmn-label"><span>Pokémon 5</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon5"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-moves">
+<div class="m_tb-custom-types-label">Moves</div>
+<select class="m_tb-pkmn-move-1" name="poke5_move1">
+<option value="" selected>Move 1</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+<select class="m_tb-pkmn-move-2" name="poke5_move2">
+<option value="" selected>Move 2</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+<select class="m_tb-pkmn-move-3" name="poke5_move3">
+<option value="" selected>Move 3</option>
+<option value="normal">Pound</option>
+<option value="fire">Fire Punch</option>
+<option value="water">Water Gun</option>
+<option value="electric">Thunder Punch</option>
+<option value="grass">Vine Whip</option>
+<option value="ice">Ice Punch</option>
+<option value="fighting">Karate Chop</option>
+<option value="poison">Poison Sting</option>
+<option value="ground">Sand Attack</option>
+<option value="flying">Wing Attack</option>
+<option value="psychic">Psybeam</option>
+<option value="bug">Pin Missile</option>
+<option value="rock">Rock Throw</option>
+<option value="ghost">Curse</option>
+<option value="dragon">Outrage</option>
+<option value="dark">Thief</option>
+<option value="steel">Steel</option>
+<option value="fairy">Sweet Kiss</option>
+</select>
+<select class="m_tb-pkmn-move-4" name="poke5_move4">
 <option value="" selected>Move 4</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -422,7 +512,7 @@ session_start();
 <div class="m_tb-pkmn-label"><span>Pokémon 6</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon6"> <div class="m_tb-pkmn-options">
 <div class="m_tb-pkmn-moves">
 <div class="m_tb-custom-types-label">Moves</div>
-<select class="m_tb-pkmn-move-1">
+<select class="m_tb-pkmn-move-1" name="poke6_move1" >
 <option value="" selected>Move 1</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -443,7 +533,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-2">
+<select class="m_tb-pkmn-move-2" name="poke6_move2">
 <option value="" selected>Move 2</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -464,7 +554,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-3">
+<select class="m_tb-pkmn-move-3" name="poke6_move3">
 <option value="" selected>Move 3</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -485,7 +575,7 @@ session_start();
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-<select class="m_tb-pkmn-move-4">
+<select class="m_tb-pkmn-move-4" name="poke6_move4">
 <option value="" selected>Move 4</option>
 <option value="normal">Pound</option>
 <option value="fire">Fire Punch</option>
@@ -508,8 +598,9 @@ session_start();
 </select>
 
 </div>
-
+<!--
 </li></li></li></li></li></li></ul>
+
 
 <div class="m_content-box m_team-builder-container">
 <div class="m_team-builder-container-header">Defensive Coverage</div>
@@ -974,11 +1065,12 @@ session_start();
 <h3>Save Team</h3>
 <div class="m_tb-options" id="m_tb-save-load-share">
 <div id="m_tb-load-team-row" class="m_tb-options-row">
+--!>
 
 <div id="m_tb-save-team-row" class="m_tb-options-row">
 <div class="m_tb-options-label">Save Your Current Team</div>
 <div class="m_tb-options-value">
-<button id="m_tb-save-team" type="button">Save Team</button>
+<button id="m_tb-save-team" type="submit">Save Team</button>
 </div>
 
 
