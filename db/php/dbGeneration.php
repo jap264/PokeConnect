@@ -75,7 +75,7 @@ if ($connection->query($query3) === TRUE) {
 }
 echo PHP_EOL;
 
-$query4 = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_moves." (move_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, type VARCHAR(10) NOT NULL)";
+$query4 = "CREATE TABLE IF NOT EXISTS ".$db.".".$table_name_moves." (move_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, move_name VARCHAR(10) NOT NULL, type VARCHAR(10) NOT NULL)";
 
 if ($connection->query($query4) === TRUE) {
     echo "Table ".$table_name_moves." created successfully";
