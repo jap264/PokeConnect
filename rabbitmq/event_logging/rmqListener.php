@@ -39,6 +39,11 @@ function requestProcessor($request)
 	    $response_msg = register($request['username'], $request['password'], $request['email']);
 	    return $response_msg;
 	    break;	    
+    case "search":
+	    echo "Requesting a search.".PHP_EOL;
+	    $response_msg = search($request['input']);
+	    return $response_msg;
+	    break;
   }
   
   return array("returnCode" => '0', 'message'=>"Server received request and processed");
