@@ -108,7 +108,149 @@ function saveteam($teamname, $poke1, $poke2, $poke3, $poke4, $poke5, $poke6){
 	        $result = $connection->query($new_query);
 	}
 
+	$response = array();
+	$response['normal'] = 0;
+	$response['fire'] = 0;
+	$response['water'] = 0;
+	$response['grass'] = 0;
+	$response['electric'] = 0;
+	$response['ice'] = 0;
+	$response['fighting'] = 0;
+	$response['poison'] = 0;
+	$response['ground'] = 0;
+	$response['flying'] = 0;
+	$response['psychic'] = 0;
+	$response['bug'] = 0;
+	$response['rock'] = 0;
+	$response['ghost'] = 0;
+	$response['dragon'] = 0;
+	$response['dark'] = 0;
+	$response['steel'] = 0;
+	$response['fairy'] = 0;
 	
+	weakness($poke1,$response);
+	weakness($poke2,$response);
+	weakness($poke3,$response);
+	weakness($poke4,$response);
+	weakness($poke5,$response);
+	weakness($poke6,$response);
+
+	return $response;
+}
+
+//returns the weaknesses for one pokemon
+function weakness($name, $response){
+	if(checkPokemonType($name)=='normal'){
+		$response['fighting'] += 1;
+		return $response;
+	}
+	if(checkPokemonType($name)=='fire'){
+		$response['water'] += 1;
+		$response['ground'] += 1;
+		$response['rock'] += 1;
+		return $response;
+	}
+        if(checkPokemonType($name)=='water'){
+		$response['grass'] += 1;
+		$response['electric'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='grass'){
+		$response['fire'] += 1;
+		$response['ice'] += 1;
+		$response['poison'] += 1;
+		$response['flying'] += 1;
+		$response['bug'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='electric'){
+		$response['ground'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='ice'){
+		$response['fire'] += 1;
+		$response['fighting'] += 1;
+		$response['rock'] += 1;
+		$response['steel'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='fighting'){
+		$response['flying'] += 1;
+		$response['psychic'] += 1;
+		$response['fairy'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='poison'){
+		$response['ground'] += 1;
+		$response['psychic'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='ground'){
+		$response['water'] += 1;
+		$response['grass'] += 1;
+		$response['ice'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='flying'){
+		$response['electric'] += 1;
+		$response['ice'] += 1;
+		$response['rock'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='psychic'){
+		$response['bug'] += 1;
+		$response['ghost'] += 1;
+		$response['dark'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='bug'){
+		$response['fire'] += 1;
+		$response['flying'] += 1;
+		$response['rock'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='rock'){
+		$response['water'] += 1;
+		$response['grass'] += 1;
+		$response['fighting'] += 1;
+		$response['ground'] += 1;
+		$response['steel'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='ghost'){
+		$response['ghost'] += 1;
+		$response['dark'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='dragon'){
+		$response['ice'] += 1;
+		$response['dragon'] += 1;
+		$response['fairy'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='dark'){
+		$response['fighting'] += 1;
+		$response['bug'] += 1;
+		$response['fairy'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='steel'){
+		$response['fire'] += 1;
+		$response['fightin'] += 1;
+		$response['ground'] += 1;
+		return $response;
+        }
+        if(checkPokemonType($name)=='fairy'){
+		$response['poison'] += 1;
+		$response['steel'] += 1;
+		return $response;
+	}
+
+	//if no type matching, return error
+	echo "No type for this pokemon: " . $name . PHP_EOL;
+	$event = date("Y-m-d") . " " . date("h:i:sa") . " [ DB ] " . "ERROR: No Pokemon with this species name: $input" . "\n";
+        log_event($event);
+	return 0;
 }
 
 //returns pokemon type
