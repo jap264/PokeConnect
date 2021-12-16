@@ -18,6 +18,28 @@ session_start();
   }
   </style>
 </head>
+<script>
+function HandleResponse(response){
+	var resp = JSON.parse(response);
+	var returnCode = parseInt(resp.returnCode);
+	if(returnCode == 0){
+		//modify the modal here
+	}
+}
+
+function GetStrengthsAndWeakness(pokemon){
+	var request = new XMLHttpRequest();
+	request.open("POST","../php/search.php",true);
+	request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	request.onreadystatechange = function(){
+	if((this.readyState == 4) && (this.status == 200)){
+		HandleResponse(this.responseText);
+		}
+	}
+
+	request.send("type=saveteam&input=snom");
+}
+</script>
 <body>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
@@ -49,7 +71,7 @@ session_start();
 <h1>PokeConnect Team Builder</h1>
 
 <div class="m_content-box">
-<form role="form" method="post" action="../php/save_team.php" id="m_tb-form" target="_blank">
+<form role="form" method="post">
 
 <h3>Team Input</h3>
 <ul id="m_tb-team-input" class="m_tb-team-input">
@@ -597,7 +619,107 @@ session_start();
 <option value="fairy">Sweet Kiss</option>
 </select>
 
+<div id="m_tb-save-team-row" class="m_tb-options-row">
+<div class="m_tb-options-label">Calculate Strengths and Weakness For Current Team</div>
+<input type="submit" OnClick='GetStrengthsAndWeakness("someTeamName", document.getElementById("Pokemon1").value, document.getElementById("Pokemon2").value, document.getElementById("Pokemon3").value, document.getElementById("Pokemon4").value, document.getElementById("Pokemon5").value, document.getElementById("Pokemon6").value )' name="calculate" value="Calculate" data-toggle="modal" data-target="#mymodal">
 </div>
+</form>
+
+<?php
+session_start();
+
+if(array_key_exists('saveteam',$_POST)) {
+
+require_once('../rabbitmqphp_example/path.inc');
+require_once('../rabbitmqphp_example/get_host_info.inc');
+require_once('../rabbitmqphp_example/rabbitMQLib.inc');
+require_once('../php/rabbitMQClient.php');
+require_once('../event_logging/event_logger.php');
+
+$client = new rabbitMQClient("../rabbitmqphp_example/rabbitMQ_rmq.ini","testServer");
+
+$request = array();
+$request['type'] = "saveteam";
+$request['teamname'] = "someName";
+$request['Pokemone1'] = $_POST["Pokemon1"];
+$request['Pokemone2'] = $_POST["Pokemon2"];
+$request['Pokemone3'] = $_POST["Pokemon3"];
+$request['Pokemone4'] = $_POST["Pokemon4"];
+$request['Pokemone5'] = $_POST["Pokemon5"];
+$request['Pokemone6'] = $_POST["Pokemon6"];
+$moves = array();
+$moves['poke1_move1'] = $_POST["poke1_move1"];
+$moves['poke1_move2'] = $_POST["poke1_move2"];
+$moves['poke1_move3'] = $_POST["poke1_move3"];
+$moves['poke1_move4'] = $_POST["poke1_move4"];
+$moves['poke2_move1'] = $_POST["poke2_move1"];
+$moves['poke2_move2'] = $_POST["poke2_move2"];
+$moves['poke2_move3'] = $_POST["poke2_move3"];
+$moves['poke2_move4'] = $_POST["poke2_move4"];
+$moves['poke3_move1'] = $_POST["poke3_move1"];
+$moves['poke3_move2'] = $_POST["poke3_move2"];
+$moves['poke3_move3'] = $_POST["poke3_move3"];
+$moves['poke3_move4'] = $_POST["poke3_move4"];
+$moves['poke4_move1'] = $_POST["poke4_move1"];
+$moves['poke4_move2'] = $_POST["poke4_move2"];
+$moves['poke4_move3'] = $_POST["poke4_move3"];
+$moves['poke4_move4'] = $_POST["poke4_move4"];
+$moves['poke5_move1'] = $_POST["poke5_move1"];
+$moves['poke5_move2'] = $_POST["poke5_move2"];
+$moves['poke5_move3'] = $_POST["poke5_move3"];
+$moves['poke5_move4'] = $_POST["poke5_move4"];
+$moves['poke6_move1'] = $_POST["poke6_move1"];
+$moves['poke6_move2'] = $_POST["poke6_move2"];
+$moves['poke6_move3'] = $_POST["poke6_move3"];
+$moves['poke6_move4'] = $_POST["poke6_move4"];
+$request['moves'] = $moves;
+
+$response = $client->send_request($request);
+
+if($response != NULL){
+        //$event = date("Y-m-d") . "  " . date("h:i:sa") . " [ FE ] " . "SUCCESS: pokemon found " . $_POST["pokemon"]."\n";
+        //log_event($event);
+        //$user = $_POST['username'];
+        //$email = $_POST['email'];
+        //$output = shell_exec("python3 emailscript.py $usr $email");
+        //header("Location: ../html/reg_success.html");
+        //echo '<div class="modal-body">'.json_encode($response).'</div>';
+	      $strengths = $response['strengths'];
+        $weakness = $response['weaknesses'];
+        //echo '<div class="modal-body">'.json_encode($response).'</div>';
+        echo '<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Strengths and Weakness Calculation</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    <h3>' .$strengths. '</h3>
+                    <h3>' .$weakness. '</h3>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>';
+	      exit();
+} else {
+        $error = date("Y-m-d") . "  " . date("h:i:sa") . " [ FE ] " . "ERROR: failed to return pokemon data\n";
+        log_event($error);
+        //session_destroy()
+        exit();
+}
+session_destroy();
+exit(0);
+}
+?>
+
+</div>
+
 <!--
 </li></li></li></li></li></li></ul>
 
