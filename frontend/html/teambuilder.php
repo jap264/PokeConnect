@@ -717,8 +717,44 @@ if($response != NULL){
                       </button>
                     </div>
                     <div class="modal-body">
-                    <h3>' .$strengths. '</h3>
-                    <h3>' .$weakness. '</h3>
+                    <h4>Strengths Scores</h4>
+                    <h3>' .$strengths['normal']. '</h3>
+                    <h3>' .$strengths['fire']. '</h3>
+                    <h3>' . $strengths['water']. '</h3>
+                    <h3>' . $strengths['grass']. '</h3>
+                    <h3>' . $strengths['electric']. '</h3>
+                    <h3>' . $strengths['ice']. '</h3>
+                    <h3>' . $strengths['fighting']. '</h3>
+                    <h3>' . $strengths['poison']. '</h3>
+                    <h3>' . $strengths['ground']. '</h3>
+                    <h3>' . $strengths['flying']. '</h3>
+                    <h3>' . $strengths['psychic']. '</h3>
+                    <h3>' . $strengths['bug']. '</h3>
+                    <h3>' . $strengths['rock']. '</h3>
+                    <h3>' . $strengths['ghost']. '</h3>
+                    <h3>' . $strengths['dragon']. '</h3>
+                    <h3>' . $strengths['dark']. '</h3>
+                    <h3>' . $strengths['steel']. '</h3>
+                    <h3>' . $strengths['fairy']. '</h3>
+                    <h4>Weaknesses Scores</h4>
+                    <h3>' .$weakness['normal']. '</h3>
+                    <h3>' .$weakness['fire']. '</h3>
+                    <h3>' . $weakness['water']. '</h3>
+                    <h3>' . $weakness['grass']. '</h3>
+                    <h3>' . $weakness['electric']. '</h3>
+                    <h3>' . $weakness['ice']. '</h3>
+                    <h3>' . $weakness['fighting']. '</h3>
+                    <h3>' . $weakness['poison']. '</h3>
+                    <h3>' . $weakness['ground']. '</h3>
+                    <h3>' . $weakness['flying']. '</h3>
+                    <h3>' . $weakness['psychic']. '</h3>
+                    <h3>' . $weakness['bug']. '</h3>
+                    <h3>' . $weakness['rock']. '</h3>
+                    <h3>' . $weakness['ghost']. '</h3>
+                    <h3>' . $weakness['dragon']. '</h3>
+                    <h3>' . $weakness['dark']. '</h3>
+                    <h3>' . $weakness['steel']. '</h3>
+                    <h3>' . $weakness['fairy']. '</h3>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
