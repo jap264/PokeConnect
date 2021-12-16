@@ -293,6 +293,9 @@ function strength($name, $response){
 		$response['dark'] += 1;
                 return $response;
 	}
+	if($name=='normal'){
+        return $response;
+	}
 
         //if no type matching, return error
         echo "No type for this move: " . $name . PHP_EOL;
