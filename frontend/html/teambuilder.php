@@ -707,14 +707,12 @@ if($response != NULL){
 	      $strengths = $response['strengths'];
         $weakness = $response['weaknesses'];
         //echo '<div class="modal-body">'.json_encode($response).'</div>';
-        echo '<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+        echo "<script>console.log('Before the echo of modal');</script>";
+
+        echo '<div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Strengths and Weakness Calculation</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
+                      <h5 class="modal-title">Strengths and Weakness Calculation</h5>
                     </div>
                     <div class="modal-body">
                     <h4>Strengths Scores</h4>
@@ -760,8 +758,7 @@ if($response != NULL){
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                   </div>
-                </div>
-              </div>';
+                </div>';
 	      exit();
 } else {
         $error = date("Y-m-d") . "  " . date("h:i:sa") . " [ FE ] " . "ERROR: failed to return pokemon data\n";
