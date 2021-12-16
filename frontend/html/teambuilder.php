@@ -79,9 +79,9 @@ function GetStrengthsAndWeakness(pokemon){
 
 <li class="m_tb-pkmn-input">
 <div class="m_tb-pkmn-label"><span>Pokémon 1</span>:<div class="m_no-gen-8-text"></div></div> 
-<input type="text" class="m_tb-pkmn-name" value="" name="Pokemon1"> 
-<div class="m_tb-pkmn-options">
+<input type="text" class="m_tb-pkmn-name" name="Pokemon1">
 
+<div class="m_tb-pkmn-options">
 <div class="m_tb-pkmn-moves">
 <div class="m_tb-custom-types-label">Moves</div>
 <select class="m_tb-pkmn-move-1" name="poke1_move1">
@@ -169,10 +169,12 @@ function GetStrengthsAndWeakness(pokemon){
 <option value="fairy">Sweet Kiss</option>
 </select>
 
-</div>
+</div></div>
 
 <li class="m_tb-pkmn-input">
-<div class="m_tb-pkmn-label"><span>Pokémon 2</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon2"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-label"><span>Pokémon 2</span>:<div class="m_no-gen-8-text"></div></div> 
+<input type="text" class="m_tb-pkmn-name" name="Pokemon2"> 
+<div class="m_tb-pkmn-options">
 <div class="m_tb-pkmn-moves">
 <div class="m_tb-custom-types-label">Moves</div>
 <select class="m_tb-pkmn-move-1" name="poke2_move1">
@@ -260,10 +262,12 @@ function GetStrengthsAndWeakness(pokemon){
 <option value="fairy">Sweet Kiss</option>
 </select>
 
-</div>
+</div></div>
 
 <li class="m_tb-pkmn-input">
-<div class="m_tb-pkmn-label"><span>Pokémon 3</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon3"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-label"><span>Pokémon 3</span>:<div class="m_no-gen-8-text"></div></div> 
+<input type="text" class="m_tb-pkmn-name" name="Pokemon3"> 
+<div class="m_tb-pkmn-options">
 <div class="m_tb-pkmn-moves">
 <div class="m_tb-custom-types-label">Moves</div>
 <select class="m_tb-pkmn-move-1" name="poke3_move1">
@@ -351,10 +355,12 @@ function GetStrengthsAndWeakness(pokemon){
 <option value="fairy">Sweet Kiss</option>
 </select>
 
-</div>
+</div></div>
 
 <li class="m_tb-pkmn-input">
-<div class="m_tb-pkmn-label"><span>Pokémon 4</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon4"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-label"><span>Pokémon 4</span>:<div class="m_no-gen-8-text"></div></div> 
+<input type="text" class="m_tb-pkmn-name" name="Pokemon4"> 
+<div class="m_tb-pkmn-options">
 <div class="m_tb-pkmn-moves">
 <div class="m_tb-custom-types-label">Moves</div>
 <select class="m_tb-pkmn-move-1" name="poke4_move1">
@@ -441,11 +447,11 @@ function GetStrengthsAndWeakness(pokemon){
 <option value="steel">Steel</option>
 <option value="fairy">Sweet Kiss</option>
 </select>
-</div>
+</div></div>
 
 <li class="m_tb-pkmn-input">
 <div class="m_tb-pkmn-label"><span>Pokémon 5</span>:<div class="m_no-gen-8-text"></div></div> 
-<input type="text" class="m_tb-pkmn-name" value="" name="Pokemon5"> 
+<input type="text" class="m_tb-pkmn-name" name="Pokemon5"> 
 <div class="m_tb-pkmn-options">
 <div class="m_tb-pkmn-moves">
 <div class="m_tb-custom-types-label">Moves</div>
@@ -534,10 +540,12 @@ function GetStrengthsAndWeakness(pokemon){
 <option value="fairy">Sweet Kiss</option>
 </select>
 
-</div>
+</div></div>
 
 <li class="m_tb-pkmn-input">
-<div class="m_tb-pkmn-label"><span>Pokémon 6</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon6"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-label"><span>Pokémon 6</span>:<div class="m_no-gen-8-text"></div></div> 
+<input type="text" class="m_tb-pkmn-name" name="Pokemon6"> 
+<div class="m_tb-pkmn-options">
 <div class="m_tb-pkmn-moves">
 <div class="m_tb-custom-types-label">Moves</div>
 <select class="m_tb-pkmn-move-1" name="poke6_move1" >
@@ -625,7 +633,7 @@ function GetStrengthsAndWeakness(pokemon){
 <option value="fairy">Sweet Kiss</option>
 </select>
 
-</div>
+</div></div>
 
 </li></li></li></li></li></li></ul>
 
@@ -640,7 +648,7 @@ function GetStrengthsAndWeakness(pokemon){
 <?php
 session_start();
 
-if(array_key_exists('saveteam',$_POST)) {
+if(array_key_exists('Pokemon1',$_POST)) {
 
 require_once('../rabbitmqphp_example/path.inc');
 require_once('../rabbitmqphp_example/get_host_info.inc');
