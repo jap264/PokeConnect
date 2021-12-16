@@ -74,9 +74,13 @@ function GetStrengthsAndWeakness(pokemon){
 <form role="form" method="post">
 
 <h3>Team Input</h3>
+
 <ul id="m_tb-team-input" class="m_tb-team-input">
+
 <li class="m_tb-pkmn-input">
-<div class="m_tb-pkmn-label"><span>Pokémon 1</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon1"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-label"><span>Pokémon 1</span>:<div class="m_no-gen-8-text"></div></div> 
+<input type="text" class="m_tb-pkmn-name" value="" name="Pokemon1"> 
+<div class="m_tb-pkmn-options">
 
 <div class="m_tb-pkmn-moves">
 <div class="m_tb-custom-types-label">Moves</div>
@@ -440,7 +444,9 @@ function GetStrengthsAndWeakness(pokemon){
 </div>
 
 <li class="m_tb-pkmn-input">
-<div class="m_tb-pkmn-label"><span>Pokémon 5</span>:<div class="m_no-gen-8-text"></div></div> <input type="text" class="m_tb-pkmn-name" value="" name="Pokemon5"> <div class="m_tb-pkmn-options">
+<div class="m_tb-pkmn-label"><span>Pokémon 5</span>:<div class="m_no-gen-8-text"></div></div> 
+<input type="text" class="m_tb-pkmn-name" value="" name="Pokemon5"> 
+<div class="m_tb-pkmn-options">
 <div class="m_tb-pkmn-moves">
 <div class="m_tb-custom-types-label">Moves</div>
 <select class="m_tb-pkmn-move-1" name="poke5_move1">
@@ -619,11 +625,17 @@ function GetStrengthsAndWeakness(pokemon){
 <option value="fairy">Sweet Kiss</option>
 </select>
 
+</div>
+
+</li></li></li></li></li></li></ul>
+
 <div id="m_tb-save-team-row" class="m_tb-options-row">
 <div class="m_tb-options-label">Calculate Strengths and Weakness For Current Team</div>
 <input type="submit" OnClick='GetStrengthsAndWeakness("someTeamName", document.getElementById("Pokemon1").value, document.getElementById("Pokemon2").value, document.getElementById("Pokemon3").value, document.getElementById("Pokemon4").value, document.getElementById("Pokemon5").value, document.getElementById("Pokemon6").value )' name="calculate" value="Calculate" data-toggle="modal" data-target="#mymodal">
 </div>
 </form>
+
+<div>
 
 <?php
 session_start();
@@ -723,8 +735,6 @@ exit(0);
 </html>
 
 <!--
-</li></li></li></li></li></li></ul>
-
 
 <div class="m_content-box m_team-builder-container">
 <div class="m_team-builder-container-header">Defensive Coverage</div>
