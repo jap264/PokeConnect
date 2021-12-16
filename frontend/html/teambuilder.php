@@ -696,8 +696,6 @@ $request['moves'] = $moves;
 
 $response = $client->send_request($request);
 
-echo "<script>console.log('Before check response');</script>";
-
 if($response != NULL){
         //$event = date("Y-m-d") . "  " . date("h:i:sa") . " [ FE ] " . "SUCCESS: pokemon found " . $_POST["pokemon"]."\n";
         //log_event($event);
@@ -709,14 +707,8 @@ if($response != NULL){
 	      $strengths = $response['strengths'];
         $weakness = $response['weaknesses'];
         //echo '<div class="modal-body">'.json_encode($response).'</div>';
-        echo "<script>console.log('Before the echo of modal');</script>";
 
-        echo '<div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Strengths and Weakness Calculation</h5>
-                    </div>
-                    <div class="modal-body">
+        echo '<div class="modal-body">
                     <h4>Strengths Scores</h4>
                     <h3>' .$strengths['normal']. '</h3>
                     <h3>' .$strengths['fire']. '</h3>
@@ -755,12 +747,7 @@ if($response != NULL){
                     <h3>' . $weakness['dark']. '</h3>
                     <h3>' . $weakness['steel']. '</h3>
                     <h3>' . $weakness['fairy']. '</h3>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>';
+                    </div>';
 	      exit();
 } else {
         $error = date("Y-m-d") . "  " . date("h:i:sa") . " [ FE ] " . "ERROR: failed to return pokemon data\n";
