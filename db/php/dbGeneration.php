@@ -28,7 +28,6 @@ if(!$connection){
         //log_event($event);
         die("Mysqli Connection Failure: " . $connection->connect_error.PHP_EOL);
 }
-
 // Create database
 $sql = "CREATE DATABASE IF NOT EXISTS ".$db;
 if ($connection->query($sql) === TRUE) {

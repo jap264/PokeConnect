@@ -86,3 +86,8 @@ Event Logging Start -----
 2021-11-11 01:12:56pm [ DB ] ERROR: No Pokemon with this species name: 
 2021-11-11  01:13:07pm [ FE ] ERROR: failed to return pokemon data
 2021-11-11  01:39:05pm [ FE ] SUCCESS: login successful using Username = test and Password = test
+2021-12-16  11:59:33am [ DB ] ERROR: cannot connect to database: 
+
+2021-12-16  01:25:36pm [ DB ] ERROR: cannot connect to database: 
+
+2021-12-16  02:02:06pm [ DB ]  ERROR: trying to register a taken username: jack

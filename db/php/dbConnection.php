@@ -2,7 +2,6 @@
 	require_once('../event_logging/event_logger.php');
 
 	//Establishes connection to MySQL database
-
 	function dbConnection(){
 
 		$hostname = "localhost";
