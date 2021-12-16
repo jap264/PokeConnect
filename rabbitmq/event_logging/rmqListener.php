@@ -44,6 +44,10 @@ function requestProcessor($request)
 	    $response_msg = search($request['input']);
 	    return $response_msg;
 	    break;
+    case "saveteam":
+	    echo "Requesting to save team and evaluate defensive weaknesses.".PHP_EOL;
+	    $response_msg = saveteam($request['teamname'], $request['Pokemon1'], $request['Pokemon2'], $request['Pokemon3'], $request['Pokemon4'], $request['Pokemon5'], $request['Pokemon6'], $request['moves']);
+	    break;
   }
   
   return array("returnCode" => '0', 'message'=>"Server received request and processed");

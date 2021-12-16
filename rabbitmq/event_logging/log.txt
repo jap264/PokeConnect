@@ -92,3 +92,5 @@ Event Logging Start -----
 
 2021-12-16  02:02:06pm [ DB ]  ERROR: trying to register a taken username: jack
 2021-12-16  02:43:04pm [ FE ] SUCCESS: login successful using Username = dan and Password = 123
+2021-12-16  03:15:06pm [ FE ] SUCCESS: login successful using Username = dan and Password = 123
+2021-12-16  03:34:40pm [ FE ] SUCCESS: login successful using Username = dan and Password = 123
