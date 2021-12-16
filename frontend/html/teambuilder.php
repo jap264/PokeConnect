@@ -719,6 +719,8 @@ exit(0);
 ?>
 
 </div>
+</body>
+</html>
 
 <!--
 </li></li></li></li></li></li></ul>
@@ -1187,7 +1189,6 @@ exit(0);
 <h3>Save Team</h3>
 <div class="m_tb-options" id="m_tb-save-load-share">
 <div id="m_tb-load-team-row" class="m_tb-options-row">
---!>
 
 <div id="m_tb-save-team-row" class="m_tb-options-row">
 <div class="m_tb-options-label">Save Your Current Team</div>
@@ -1211,9 +1212,6 @@ exit(0);
     </div>
 </div>
 </div>
-</form>
-</div>
-</body>
-</html>
+</form>-->
 
 
