@@ -20,6 +20,33 @@ $request['slot3'] = $_POST["Pokemon3"];
 $request['slot4'] = $_POST["Pokemon4"];
 $request['slot5'] = $_POST["Pokemon5"];
 $request['slot6'] = $_POST["Pokemon6"];
+$moves = array();
+$moves['poke1_move1'] = $_POST["poke1_move1"];
+$moves['poke1_move2'] = $_POST["poke1_move2"];
+$moves['poke1_move3'] = $_POST["poke1_move3"];
+$moves['poke1_move4'] = $_POST["poke1_move4"];
+$moves['poke2_move1'] = $_POST["poke2_move1"];
+$moves['poke2_move2'] = $_POST["poke2_move2"];
+$moves['poke2_move3'] = $_POST["poke2_move3"];
+$moves['poke2_move4'] = $_POST["poke2_move4"];
+$moves['poke3_move1'] = $_POST["poke3_move1"];
+$moves['poke3_move2'] = $_POST["poke3_move2"];
+$moves['poke3_move3'] = $_POST["poke3_move3"];
+$moves['poke3_move4'] = $_POST["poke3_move4"];
+$moves['poke4_move1'] = $_POST["poke4_move1"];
+$moves['poke4_move2'] = $_POST["poke4_move2"];
+$moves['poke4_move3'] = $_POST["poke4_move3"];
+$moves['poke4_move4'] = $_POST["poke4_move4"];
+$moves['poke5_move1'] = $_POST["poke5_move1"];
+$moves['poke5_move2'] = $_POST["poke5_move2"];
+$moves['poke5_move3'] = $_POST["poke5_move3"];
+$moves['poke5_move4'] = $_POST["poke5_move4"];
+$moves['poke6_move1'] = $_POST["poke6_move1"];
+$moves['poke6_move2'] = $_POST["poke6_move2"];
+$moves['poke6_move3'] = $_POST["poke6_move3"];
+$moves['poke6_move4'] = $_POST["poke6_move4"];
+$request['moves'] = $moves;
+
 
 $response = $client->send_request($request);
 

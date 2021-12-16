@@ -93,7 +93,7 @@ function search($input){
 }
 
 //save team to database and return team weaknesses
-function saveteam($teamname, $poke1, $poke2, $poke3, $poke4, $poke5, $poke6){
+function saveteam($teamname, $poke1, $poke2, $poke3, $poke4, $poke5, $poke6, $moves){
 
 	$connection = dbConnection();
 
@@ -108,38 +108,202 @@ function saveteam($teamname, $poke1, $poke2, $poke3, $poke4, $poke5, $poke6){
 	        $result = $connection->query($new_query);
 	}
 
-	$response = array();
-	$response['normal'] = 0;
-	$response['fire'] = 0;
-	$response['water'] = 0;
-	$response['grass'] = 0;
-	$response['electric'] = 0;
-	$response['ice'] = 0;
-	$response['fighting'] = 0;
-	$response['poison'] = 0;
-	$response['ground'] = 0;
-	$response['flying'] = 0;
-	$response['psychic'] = 0;
-	$response['bug'] = 0;
-	$response['rock'] = 0;
-	$response['ghost'] = 0;
-	$response['dragon'] = 0;
-	$response['dark'] = 0;
-	$response['steel'] = 0;
-	$response['fairy'] = 0;
+	$weaknesses = array();
+	$weaknesses['normal'] = 0;
+	$weaknesses['fire'] = 0;
+	$weaknesses['water'] = 0;
+	$weaknesses['grass'] = 0;
+	$weaknesses['electric'] = 0;
+	$weaknesses['ice'] = 0;
+	$weaknesses['fighting'] = 0;
+	$weaknesses['poison'] = 0;
+	$weaknesses['ground'] = 0;
+	$weaknesses['flying'] = 0;
+	$weaknesses['psychic'] = 0;
+	$weaknesses['bug'] = 0;
+	$weaknesses['rock'] = 0;
+	$weaknesses['ghost'] = 0;
+	$weaknesses['dragon'] = 0;
+	$weaknesses['dark'] = 0;
+	$weaknesses['steel'] = 0;
+	$weaknesses['fairy'] = 0;
 	
-	weakness($poke1,$response);
-	weakness($poke2,$response);
-	weakness($poke3,$response);
-	weakness($poke4,$response);
-	weakness($poke5,$response);
-	weakness($poke6,$response);
+	$weaknesses = weakness($poke1,$weaknesses);
+	$weaknesses = weakness($poke2,$weaknesses);
+	$weaknesses = weakness($poke3,$weaknesses);
+	$weaknesses = weakness($poke4,$weaknesses);
+	$weaknesses = weakness($poke5,$weaknesses);
+	$weaknesses = weakness($poke6,$weaknesses);
 
+	$strengths = array();
+	$strengths['normal'] = 0;
+        $strengths['fire'] = 0;
+        $strengths['water'] = 0;
+        $strengths['grass'] = 0;
+        $strengths['electric'] = 0;
+        $strengths['ice'] = 0;
+        $strengths['fighting'] = 0;
+        $strengths['poison'] = 0;
+        $strengths['ground'] = 0;
+        $strengths['flying'] = 0;
+        $strengths['psychic'] = 0;
+        $strengths['bug'] = 0;
+        $strengths['rock'] = 0;
+        $strengths['ghost'] = 0;
+        $strengths['dragon'] = 0;
+        $strengths['dark'] = 0;
+        $strengths['steel'] = 0;
+        $strengths['fairy'] = 0;
+
+	$strengths = strength($moves['poke1_move1'],$strengths);
+	$strengths = strength($moves['poke1_move2'],$strengths);
+	$strengths = strength($moves['poke1_move3'],$strengths);
+	$strengths = strength($moves['poke1_move4'],$strengths);
+	$strengths = strength($moves['poke2_move1'],$strengths);
+        $strengths = strength($moves['poke2_move2'],$strengths);
+        $strengths = strength($moves['poke2_move3'],$strengths);
+	$strengths = strength($moves['poke2_move4'],$strengths);
+	$strengths = strength($moves['poke3_move1'],$strengths);
+        $strengths = strength($moves['poke3_move2'],$strengths);
+        $strengths = strength($moves['poke3_move3'],$strengths);
+	$strengths = strength($moves['poke3_move4'],$strengths);
+	$strengths = strength($moves['poke4_move1'],$strengths);
+        $strengths = strength($moves['poke4_move2'],$strengths);
+        $strengths = strength($moves['poke4_move3'],$strengths);
+	$strengths = strength($moves['poke4_move4'],$strengths);
+	$strengths = strength($moves['poke5_move1'],$strengths);
+        $strengths = strength($moves['poke5_move2'],$strengths);
+        $strengths = strength($moves['poke5_move3'],$strengths);
+	$strengths = strength($moves['poke5_move4'],$strengths);
+	$strengths = strength($moves['poke6_move1'],$strengths);
+        $strengths = strength($moves['poke6_move2'],$strengths);
+        $strengths = strength($moves['poke6_move3'],$strengths);
+        $strengths = strength($moves['poke6_move4'],$strengths);
+
+	$response = array();
+	$response['strengths'] = $strengths;
+	$response['weaknesses'] = $weaknesses;
 	return $response;
 }
 
+//returns the offensive coverage of one move
+//name is the type of the move
+function strength($name, $response){
+        if($name=='fire'){
+		$response['grass'] += 1;
+		$response['ice'] += 1;
+		$response['bug'] += 1;
+		$response['steel'] += 1;	
+		return $response;
+	}
+	if($name=='water'){
+		$response['fire'] += 1;
+		$response['ground'] += 1;
+		$response['rock'] += 1;
+		return $response;
+	}
+	if($name=='grass'){
+		$response['water'] += 1;
+		$response['ground'] += 1;
+		$response['rock'] += 1;
+                return $response;
+	}
+	if($name=='electric'){
+		$response['water'] += 1;
+		$response['flying'] += 1;
+                return $response;
+	}
+	if($name=='ice'){
+		$response['grass'] += 1;
+		$response['ground'] += 1;
+		$response['flying'] += 1;
+		$response['dragon'] += 1;
+                return $response;
+	}
+	if($name=='fighting'){
+		$response['normal'] += 1;
+		$response['ice'] += 1;
+		$response['rock'] += 1;
+		$response['dark'] += 1;
+		$response['steel'] += 1;
+                return $response;
+	}
+	if($name=='poison'){
+		$response['grass'] += 1;
+		$response['fairy'] += 1;
+                return $response;
+	}
+	if($name=='ground'){
+		$response['fire'] += 1;
+		$response['electric'] += 1;
+		$response['poison'] += 1;
+		$response['rock'] += 1;
+		$response['steel'] += 1;
+                return $response;
+	}
+	if($name=='flying'){
+		$response['grass'] += 1;
+		$response['ice'] += 1;
+		$response['bug'] += 1;
+                return $response;
+	}
+	if($name=='psychic'){
+		$response['fighting'] += 1;
+		$response['poison'] += 1;
+                return $response;
+	}
+	if($name=='bug'){
+		$response['grass'] += 1;
+		$response['flying'] += 1;
+		$response['psychic'] += 1;
+		$response['dark'] += 1;
+                return $response;
+	}
+	if($name=='rock'){
+		$response['fire'] += 1;
+		$response['ice'] += 1;
+		$response['flying'] += 1;
+		$response['bug'] += 1;
+                return $response;
+	}
+	if($name=='ghost'){
+		$response['psychic'] += 1;
+		$response['ghost'] += 1;
+                return $response;
+	}
+	if($name=='dragon'){
+                $response['dragon'] += 1;
+                return $response;
+	}
+	if($name=='dark'){
+		$response['psychic'] += 1;
+		$response['ghost'] += 1;
+                return $response;
+	}
+	if($name=='steel'){
+		$response['ice'] += 1;
+		$response['rock'] += 1;
+		$response['fairy'] += 1;
+                return $response;
+	}
+	if($name=='fairy'){
+		$response['fighting'] += 1;
+		$response['dragon'] += 1;
+		$response['dark'] += 1;
+                return $response;
+	}
+
+        //if no type matching, return error
+        echo "No type for this move: " . $name . PHP_EOL;
+        $event = date("Y-m-d") . " " . date("h:i:sa") . " [ DB ] " . "ERROR: No matching type with this name: $name" . "\n";
+        log_event($event);
+        return 0;
+}
+
+
 //returns the weaknesses for one pokemon
-function weakness($name, $response){
+function weakness($name, $response){ 
+
 	if(checkPokemonType($name)=='normal'){
 		$response['fighting'] += 1;
 		return $response;
@@ -261,14 +425,14 @@ function checkPokemonType($name){
         if($result){
                 if($result->num_rows == 0){
                         echo("No Pokemon with this species name.");
-                        $event = date("Y-m-d") . " " . date("h:i:sa") . " [ DB ] " . "ERROR: No Pokemon with this species name: $input" . "\n";
+                        $event = date("Y-m-d") . " " . date("h:i:sa") . " [ DB ] " . "ERROR: No Pokemon with this species name: $name" . "\n";
                         log_event($event);
                         return 0;
                 }
                 else{
                         while($row = $result->fetch_assoc()){
                                 if($row['poke_name'] == $name){
-                                        echo "Pokemon Found.".PHP_EOL;
+                                        echo "Pokemon found, returning type.".PHP_EOL;
                                         return $row['type1'];
                                 }
                                 else{

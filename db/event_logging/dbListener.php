@@ -39,7 +39,7 @@ function requestProcessor($request){
 			break;
 		case "saveteam":
 			echo "Requesting to save team and evaluate defensive weaknesses.".PHP_EOL;
-			$response_msg = saveteam($request['teamname'],$request['Pokemon1'],$request['Pokemon2'], $request['Pokemon3'], $request['Pokemon4'], $request['Pokemon5'], $request['Pokemon6']);
+			$response_msg = saveteam($request['teamname'],$request['Pokemon1'],$request['Pokemon2'], $request['Pokemon3'], $request['Pokemon4'], $request['Pokemon5'], $request['Pokemon6'], $request['moves']);
 			break;
 		default:
 			echo "default case";	
