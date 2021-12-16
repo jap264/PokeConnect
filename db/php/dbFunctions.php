@@ -183,6 +183,7 @@ function saveteam($teamname, $poke1, $poke2, $poke3, $poke4, $poke5, $poke6, $mo
 	$response = array();
 	$response['strengths'] = $strengths;
 	$response['weaknesses'] = $weaknesses;
+	echo "Responding with the team's strengths and weaknesses.".PHP_EOL;
 	return $response;
 }
 
