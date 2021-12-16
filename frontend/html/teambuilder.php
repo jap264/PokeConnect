@@ -639,7 +639,7 @@ function GetStrengthsAndWeakness(pokemon){
 
 <div id="m_tb-save-team-row" class="m_tb-options-row">
 <div class="m_tb-options-label">Calculate Strengths and Weakness For Current Team</div>
-<input type="submit" OnClick='GetStrengthsAndWeakness("someTeamName", document.getElementById("Pokemon1").value, document.getElementById("Pokemon2").value, document.getElementById("Pokemon3").value, document.getElementById("Pokemon4").value, document.getElementById("Pokemon5").value, document.getElementById("Pokemon6").value )' name="calculate" value="Calculate" data-toggle="modal" data-target="#mymodal">
+<input type="submit" name="calculate" value="Calculate">
 </div>
 </form>
 
@@ -695,6 +695,8 @@ $moves['poke6_move4'] = $_POST["poke6_move4"];
 $request['moves'] = $moves;
 
 $response = $client->send_request($request);
+
+echo "<script>console.log('Before check response');</script>";
 
 if($response != NULL){
         //$event = date("Y-m-d") . "  " . date("h:i:sa") . " [ FE ] " . "SUCCESS: pokemon found " . $_POST["pokemon"]."\n";
