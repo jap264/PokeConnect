@@ -116,7 +116,7 @@ require_once('../rabbitmqphp_example/rabbitMQLib.inc');
 require_once('../php/rabbitMQClient.php');
 require_once('../event_logging/event_logger.php');
 
-$client = new rabbitMQClient("../rabbitmqphp_example/rabbitMQ_db.ini","testServer");
+$client = new rabbitMQClient("../rabbitmqphp_example/rabbitMQ_rmq.ini","testServer");
 
 $request = array();
 $request['type'] = "search";
