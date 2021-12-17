@@ -25,6 +25,30 @@ if($response == 1){
 	/*$user = $_POST['username'];
 	$email = $_POST['email'];
 	$output = shell_exec("python3 emailscript.py $usr $email");*/
+
+	$to = $_POST['email'];
+	$subject = "Admin | You are just successfully registered in PokeConnect";
+
+	  $message = "
+	  <html>
+	    <head>
+	      <title>Registration is a success! | Pokimon</title>
+	      </head>
+  	  <body>
+     		 <h2>Notification Email from PokeConnect</h2>
+     	 <p>Thank you for registering with our PokeConnect  website!</p>
+   	 </body>
+ 	 </html>
+		  ";
+
+
+	  $headers = "MIME-Version: 1.0" . "\r\n";
+ 	 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+	  $headers .= 'From: <admin@no-reply.com>' . "\r\n";
+
+	  mail($to,$subject,$message,$headers);
+
 	header("Location: ../html/reg_success.php");
 	exit();
 } else {
