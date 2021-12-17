@@ -97,3 +97,10 @@ Event Logging Start -----
 2021-12-16 04:57:25pm [ DB ] ERROR: No Pokemon with this species name: 
 2021-12-16 05:08:37pm [ DB ] ERROR: No Pokemon with this species name: 
 2021-12-16 05:15:04pm [ DB ] ERROR: No matching type with this name: normal
+2021-12-16  07:40:47pm [ DB ]  ERROR: trying to register a taken username: jack
+2021-12-16  07:54:01pm [ DB ]  ERROR: trying to register a taken username: jack
+2021-12-16 07:58:12pm [ DB ] ERROR: No matching type with this name: 
+2021-12-16  08:01:30pm [ DB ]  ERROR: trying to register a taken username: jack
+2021-12-16  08:02:57pm [ DB ]  ERROR: trying to register a taken username: jack
+2021-12-16  08:15:44pm [ FE ] SUCCESS: login successful using Username = dan and Password = 123
+2021-12-16  08:17:26pm [ FE ] SUCCESS: login successful using Username = dan and Password = 123
