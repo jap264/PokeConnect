@@ -788,6 +788,8 @@ if($response != NULL){
                     </div>';
 	      //exit();
 } else {
+        
+        echo '<h2>Reponse equal null</h2>';
         $error = date("Y-m-d") . "  " . date("h:i:sa") . " [ FE ] " . "ERROR: failed to return pokemon data\n";
         log_event($error);
         //session_destroy()
