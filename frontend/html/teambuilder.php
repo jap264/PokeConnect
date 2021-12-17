@@ -646,6 +646,32 @@ function GetStrengthsAndWeakness(pokemon){
 </form>
 
 <div>
+<script>
+$('form').submit(function(e){
+e.preventDefault() // do not submit form
+ // do get request
+$.get( 'search.php', { q : },function(e){
+    // then show the modal first
+    $('#mymodal').modal('show');
+    // then put the results there
+    $('#mymodal:visible .modal-content .modal-body').html(e);
+});
+});
+</script>
+
+<!-- The Modal -->
+<div class="container" style="margin-top:90px">
+  <div class="row">
+    <div class="col-sm-4">
+<div class="modal" id="mymodal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+ <!-- Modal Header -->
+ <div class="modal-header">
+   <h4 class="modal-title">Information</h4>
+   <button type="button" class="close" data-dismiss="modal">&times;</button>
+ </div>
 
 <?php
 session_start();
@@ -788,7 +814,7 @@ if($response != NULL){
                     <h3>' .$w17. '</h3>
                     <h3>' .$w18. '</h3>
                     </div>';
-	      //exit();
+	      exit();
 } else {
         
         echo '<h2>Reponse equal null</h2>';
