@@ -111,3 +111,5 @@ Event Logging Start -----
 2021-12-16 10:50:03pm [ DB ] ERROR: No matching type with this name: 
 2021-12-17  10:53:58am [ FE ] SUCCESS: login successful using Username = dan and Password = 123
 2021-12-17 10:56:18am [ DB ] ERROR: No Pokemon with this species name: 
+2021-12-17  11:38:27am [ FE ] SUCCESS: registration successful using Username = chanales and Password = 123
+2021-12-17  11:45:02am [ FE ] SUCCESS: login successful using Username = chanales and Password = 123
