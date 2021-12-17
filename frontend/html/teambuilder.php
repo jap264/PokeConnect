@@ -37,7 +37,7 @@ function GetStrengthsAndWeakness(pokemon){
 		}
 	}
 
-	request.send("type=saveteam&input=snom");
+	request.send("type=saveteam&input="pokemon");
 }
 </script>
 <body>
@@ -637,6 +637,7 @@ function GetStrengthsAndWeakness(pokemon){
 
 </li></li></li></li></li></li></ul>
 
+<div class="m_tb-pkmn-label"><span>Team Name:</span>:<div class="m_no-gen-8-text"></div></div>
 <input type="text" class="m_tb-pkmn-name" name="teamname">
 <div id="m_tb-save-team-row" class="m_tb-options-row">
 <div class="m_tb-options-label">Calculate Strengths and Weakness For Current Team</div>
@@ -645,11 +646,37 @@ function GetStrengthsAndWeakness(pokemon){
 </form>
 
 <div>
+<script>
+$('form').submit(function(e){
+e.preventDefault() // do not submit form
+ // do get request
+$.get( 'search.php', { q : },function(e){
+    // then show the modal first
+    $('#mymodal').modal('show');
+    // then put the results there
+    $('#mymodal:visible .modal-content .modal-body').html(e);
+});
+});
+</script>
+
+<!-- The Modal -->
+<div class="container" style="margin-top:90px">
+  <div class="row">
+    <div class="col-sm-4">
+<div class="modal" id="mymodal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+ <!-- Modal Header -->
+ <div class="modal-header">
+   <h4 class="modal-title">Information</h4>
+   <button type="button" class="close" data-dismiss="modal">&times;</button>
+ </div>
 
 <?php
 session_start();
 
-if($_SERVER['REQUEST_METHOD'] === 'POST')) {
+if(array_key_exists('Pokemon6',$_POST)) {
 
 require_once('../rabbitmqphp_example/path.inc');
 require_once('../rabbitmqphp_example/get_host_info.inc');
@@ -748,7 +775,7 @@ if($response != NULL){
         //echo '<div class="modal-body">'.json_encode($response).'</div>';
         echo '<h2>Before echo of strengths of wekaness</h2>';
 
-        echo '<div><h4>Strengths Scores</h4>
+        echo '<div class="modal-body"><h4>Strengths Scores</h4>
                     <h3>' .$s1. '</h3>
                     <h3>' .$s2. '</h3>
                     <h3>' .$s3. '</h3>
@@ -787,7 +814,7 @@ if($response != NULL){
                     <h3>' .$w17. '</h3>
                     <h3>' .$w18. '</h3>
                     </div>';
-	      //exit();
+	      exit();
 } else {
         
         echo '<h2>Reponse equal null</h2>';
