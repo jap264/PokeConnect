@@ -706,49 +706,87 @@ if($response != NULL){
         //echo '<div class="modal-body">'.json_encode($response).'</div>';
 	      $strengths = $response['strengths'];
         $weakness = $response['weaknesses'];
-        //echo '<div class="modal-body">'.json_encode($response).'</div>';
+        $s1 = $strengths['normal'];
+        $s2 = $strengths['fire'];
+        $s3 = $strengths['water'];
+        $s4 = $strengths['grass'];
+        $s5 = $strengths['electric'];
+        $s6 = $strengths['ice'];
+        $s7 = $strengths['fighting'];
+        $s8 = $strengths['poison'];
+        $s9 = $strengths['ground'];
+        $s10 = $strengths['flying'];
+        $s11 = $strengths['psychic'];
+        $s12 = $strengths['bug'];
+        $s13 = $strengths['rock'];
+        $s14 = $strengths['ghost'];
+        $s15 = $strengths['dragon'];
+        $s16 = $strengths['dark'];
+        $s17 = $strengths['steel'];
+        $s18 = $strengths['fairy'];
 
-        echo '<div class="modal-body">
-                    <h4>Strengths Scores</h4>
-                    <h3>' .$strengths['normal']. '</h3>
-                    <h3>' .$strengths['fire']. '</h3>
-                    <h3>' . $strengths['water']. '</h3>
-                    <h3>' . $strengths['grass']. '</h3>
-                    <h3>' . $strengths['electric']. '</h3>
-                    <h3>' . $strengths['ice']. '</h3>
-                    <h3>' . $strengths['fighting']. '</h3>
-                    <h3>' . $strengths['poison']. '</h3>
-                    <h3>' . $strengths['ground']. '</h3>
-                    <h3>' . $strengths['flying']. '</h3>
-                    <h3>' . $strengths['psychic']. '</h3>
-                    <h3>' . $strengths['bug']. '</h3>
-                    <h3>' . $strengths['rock']. '</h3>
-                    <h3>' . $strengths['ghost']. '</h3>
-                    <h3>' . $strengths['dragon']. '</h3>
-                    <h3>' . $strengths['dark']. '</h3>
-                    <h3>' . $strengths['steel']. '</h3>
-                    <h3>' . $strengths['fairy']. '</h3>
+        $w1 = $strengths['normal'];
+        $w2 = $strengths['fire'];
+        $w3 = $strengths['water'];
+        $w4 = $strengths['grass'];
+        $w5 = $strengths['electric'];
+        $w6 = $strengths['ice'];
+        $w7 = $strengths['fighting'];
+        $w8 = $strengths['poison'];
+        $w9 = $strengths['ground'];
+        $w10 = $strengths['flying'];
+        $w11 = $strengths['psychic'];
+        $w12 = $strengths['bug'];
+        $w13 = $strengths['rock'];
+        $w14 = $strengths['ghost'];
+        $w15 = $strengths['dragon'];
+        $w16 = $strengths['dark'];
+        $w17 = $strengths['steel'];
+        $w18 = $strengths['fairy'];
+        
+        //echo '<div class="modal-body">'.json_encode($response).'</div>';
+        echo '<h2>Before echo of strengths of wekaness</h2>'
+
+        echo '<div><h4>Strengths Scores</h4>
+                    <h3>' .$s1. '</h3>
+                    <h3>' .$s2. '</h3>
+                    <h3>' .$s3. '</h3>
+                    <h3>' .$s4. '</h3>
+                    <h3>' .$s5. '</h3>
+                    <h3>' .$s6. '</h3>
+                    <h3>' .$s7. '</h3>
+                    <h3>' .$s8. '</h3>
+                    <h3>' .$s9. '</h3>
+                    <h3>' .$s10. '</h3>
+                    <h3>' .$s11. '</h3>
+                    <h3>' .$s12. '</h3>
+                    <h3>' .$s13. '</h3>
+                    <h3>' .$s14. '</h3>
+                    <h3>' .$s15. '</h3>
+                    <h3>' .$s16. '</h3>
+                    <h3>' .$s17. '</h3>
+                    <h3>' .$s18. '</h3>
                     <h4>Weaknesses Scores</h4>
-                    <h3>' .$weakness['normal']. '</h3>
-                    <h3>' .$weakness['fire']. '</h3>
-                    <h3>' . $weakness['water']. '</h3>
-                    <h3>' . $weakness['grass']. '</h3>
-                    <h3>' . $weakness['electric']. '</h3>
-                    <h3>' . $weakness['ice']. '</h3>
-                    <h3>' . $weakness['fighting']. '</h3>
-                    <h3>' . $weakness['poison']. '</h3>
-                    <h3>' . $weakness['ground']. '</h3>
-                    <h3>' . $weakness['flying']. '</h3>
-                    <h3>' . $weakness['psychic']. '</h3>
-                    <h3>' . $weakness['bug']. '</h3>
-                    <h3>' . $weakness['rock']. '</h3>
-                    <h3>' . $weakness['ghost']. '</h3>
-                    <h3>' . $weakness['dragon']. '</h3>
-                    <h3>' . $weakness['dark']. '</h3>
-                    <h3>' . $weakness['steel']. '</h3>
-                    <h3>' . $weakness['fairy']. '</h3>
+                    <h3>' .$w1. '</h3>
+                    <h3>' .$w2. '</h3>
+                    <h3>' .$w3. '</h3>
+                    <h3>' .$w4. '</h3>
+                    <h3>' .$w5. '</h3>
+                    <h3>' .$w6. '</h3>
+                    <h3>' .$w7. '</h3>
+                    <h3>' .$w8. '</h3>
+                    <h3>' .$w9. '</h3>
+                    <h3>' .$w10. '</h3>
+                    <h3>' .$w11. '</h3>
+                    <h3>' .$w12. '</h3>
+                    <h3>' .$w13. '</h3>
+                    <h3>' .$w14. '</h3>
+                    <h3>' .$w15. '</h3>
+                    <h3>' .$w16. '</h3>
+                    <h3>' .$w17. '</h3>
+                    <h3>' .$w18. '</h3>
                     </div>';
-	      exit();
+	      //exit();
 } else {
         $error = date("Y-m-d") . "  " . date("h:i:sa") . " [ FE ] " . "ERROR: failed to return pokemon data\n";
         log_event($error);
