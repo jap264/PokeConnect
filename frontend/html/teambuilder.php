@@ -637,6 +637,7 @@ function GetStrengthsAndWeakness(pokemon){
 
 </li></li></li></li></li></li></ul>
 
+<div class="m_tb-pkmn-label"><span>Team Name:</span>:<div class="m_no-gen-8-text"></div></div>
 <input type="text" class="m_tb-pkmn-name" name="teamname">
 <div id="m_tb-save-team-row" class="m_tb-options-row">
 <div class="m_tb-options-label">Calculate Strengths and Weakness For Current Team</div>
@@ -649,7 +650,7 @@ function GetStrengthsAndWeakness(pokemon){
 <?php
 session_start();
 
-if($_SERVER['REQUEST_METHOD'] === 'POST')) {
+if(array_key_exists('Pokemon6',$_POST)) {
 
 require_once('../rabbitmqphp_example/path.inc');
 require_once('../rabbitmqphp_example/get_host_info.inc');
@@ -748,7 +749,7 @@ if($response != NULL){
         //echo '<div class="modal-body">'.json_encode($response).'</div>';
         echo '<h2>Before echo of strengths of wekaness</h2>';
 
-        echo '<div><h4>Strengths Scores</h4>
+        echo '<div class="modal-body"><h4>Strengths Scores</h4>
                     <h3>' .$s1. '</h3>
                     <h3>' .$s2. '</h3>
                     <h3>' .$s3. '</h3>
