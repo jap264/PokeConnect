@@ -37,7 +37,7 @@ function GetStrengthsAndWeakness(pokemon){
 		}
 	}
 
-	request.send("type=saveteam&input=snom");
+	request.send("type=saveteam&input="pokemon");
 }
 </script>
 <body>
