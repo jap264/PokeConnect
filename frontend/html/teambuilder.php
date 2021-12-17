@@ -745,7 +745,7 @@ if($response != NULL){
         $w18 = $strengths['fairy'];
         
         //echo '<div class="modal-body">'.json_encode($response).'</div>';
-        echo '<h2>Before echo of strengths of wekaness</h2>'
+        echo '<h2>Before echo of strengths of wekaness</h2>';
 
         echo '<div><h4>Strengths Scores</h4>
                     <h3>' .$s1. '</h3>
