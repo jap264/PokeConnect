@@ -28,6 +28,7 @@ function requestProcessor($request)
     case "event_log":
 	    echo "An error has occurred.".PHP_EOL;
 	    log_event($request['error_message']);
+	    return $response_msg;
 	    break;
     case "login":
 	    echo "Requesting to login.".PHP_EOL;
