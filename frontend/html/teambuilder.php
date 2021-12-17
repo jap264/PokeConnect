@@ -648,7 +648,7 @@ function GetStrengthsAndWeakness(pokemon){
 <?php
 session_start();
 
-if(array_key_exists('Pokemon1',$_POST)) {
+if(array_key_exists('Pokemon6',$_POST)) {
 
 require_once('../rabbitmqphp_example/path.inc');
 require_once('../rabbitmqphp_example/get_host_info.inc');
