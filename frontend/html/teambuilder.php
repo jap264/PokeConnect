@@ -637,6 +637,7 @@ function GetStrengthsAndWeakness(pokemon){
 
 </li></li></li></li></li></li></ul>
 
+<input type="text" class="m_tb-pkmn-name" name="teamname">
 <div id="m_tb-save-team-row" class="m_tb-options-row">
 <div class="m_tb-options-label">Calculate Strengths and Weakness For Current Team</div>
 <input type="submit" name="calculate" value="Calculate">
@@ -648,7 +649,7 @@ function GetStrengthsAndWeakness(pokemon){
 <?php
 session_start();
 
-if(array_key_exists('Pokemon6',$_POST)) {
+if($_SERVER['REQUEST_METHOD'] === 'POST')) {
 
 require_once('../rabbitmqphp_example/path.inc');
 require_once('../rabbitmqphp_example/get_host_info.inc');
@@ -660,7 +661,7 @@ $client = new rabbitMQClient("../rabbitmqphp_example/rabbitMQ_rmq.ini","testServ
 
 $request = array();
 $request['type'] = "saveteam";
-$request['teamname'] = "someName";
+$request['teamname'] = $_POST["teamname"];
 $request['Pokemon1'] = $_POST["Pokemon1"];
 $request['Pokemon2'] = $_POST["Pokemon2"];
 $request['Pokemon3'] = $_POST["Pokemon3"];
@@ -704,7 +705,7 @@ if($response != NULL){
         //$output = shell_exec("python3 emailscript.py $usr $email");
         //header("Location: ../html/reg_success.html");
         //echo '<div class="modal-body">'.json_encode($response).'</div>';
-	      $strengths = $response['strengths'];
+	$strengths = $response['strengths'];
         $weakness = $response['weaknesses'];
         $s1 = $strengths['normal'];
         $s2 = $strengths['fire'];
@@ -725,24 +726,24 @@ if($response != NULL){
         $s17 = $strengths['steel'];
         $s18 = $strengths['fairy'];
 
-        $w1 = $strengths['normal'];
-        $w2 = $strengths['fire'];
-        $w3 = $strengths['water'];
-        $w4 = $strengths['grass'];
-        $w5 = $strengths['electric'];
-        $w6 = $strengths['ice'];
-        $w7 = $strengths['fighting'];
-        $w8 = $strengths['poison'];
-        $w9 = $strengths['ground'];
-        $w10 = $strengths['flying'];
-        $w11 = $strengths['psychic'];
-        $w12 = $strengths['bug'];
-        $w13 = $strengths['rock'];
-        $w14 = $strengths['ghost'];
-        $w15 = $strengths['dragon'];
-        $w16 = $strengths['dark'];
-        $w17 = $strengths['steel'];
-        $w18 = $strengths['fairy'];
+        $w1 = $weakness['normal'];
+        $w2 = $weakness['fire'];
+        $w3 = $weakness['water'];
+        $w4 = $weakness['grass'];
+        $w5 = $weakness['electric'];
+        $w6 = $weakness['ice'];
+        $w7 = $weakness['fighting'];
+        $w8 = $weakness['poison'];
+        $w9 = $weakness['ground'];
+        $w10 = $weakness['flying'];
+        $w11 = $weakness['psychic'];
+        $w12 = $weakness['bug'];
+        $w13 = $weakness['rock'];
+        $w14 = $weakness['ghost'];
+        $w15 = $weakness['dragon'];
+        $w16 = $weakness['dark'];
+        $w17 = $weakness['steel'];
+        $w18 = $weakness['fairy'];
         
         //echo '<div class="modal-body">'.json_encode($response).'</div>';
         echo '<h2>Before echo of strengths of wekaness</h2>';
@@ -795,7 +796,7 @@ if($response != NULL){
         //session_destroy()
         exit();
 }
-session_destroy();
+//session_destroy();
 exit(0);
 }
 ?>
